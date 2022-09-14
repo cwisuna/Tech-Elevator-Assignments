@@ -1,6 +1,7 @@
 package com.techelevator;
 
 import jdk.swing.interop.SwingInterOpUtils;
+import org.w3c.dom.ls.LSOutput;
 
 public class Exercises {
 
@@ -434,7 +435,13 @@ public class Exercises {
 	    */
 
 		 double billHrs = 2.15;
+		 double billRoomsPerHour = 1 / billHrs;
 		 double jillHrs = 1.90;
+		 double jillRoomsPerHour = 1 / jillHrs;
+		 double totalRoomsPerHour = billRoomsPerHour + jillRoomsPerHour;
+		 int roomsToPaint = 5;
+		 double paint5Rooms = roomsToPaint / totalRoomsPerHour;
+		System.out.println(paint5Rooms);
 
 
 
@@ -445,13 +452,21 @@ public class Exercises {
 		with a period. Use "Grace", "Hopper, and "B" for the first name, last name, and middle initial.
 		Example: "John", "Smith, "D" —> "Smith, John D."
 	    */
+		String firstName = "Grace ";
+		String middleName = "B.";
+		String lastName = "Hopper, ";
+		String fullName = lastName + firstName + middleName;
+		System.out.println(fullName);
 
 
 	    /* Exercise 53
 	    53. The distance between New York and Chicago is 800 miles, and the train has already travelled 537 miles.
 	    What percentage of the trip as a whole number has been completed?
 	    */
-
+		double totalTripMiles = 800;
+		double milesTraveled = 537;
+		int percentofTripTaken = (int)(( milesTraveled / totalTripMiles ) * 100);
+		System.out.println(percentofTripTaken);
 	}
 
 }
