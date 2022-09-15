@@ -51,25 +51,6 @@ public class Exercise04_HotelReservation {
     Implement the logic to return the total amount of the stay based on the total number of nights and the number of weekend nights.
     NOTE: the numOfTotalNights parameter includes weekend nights.
 
-
-    89.99
-    3 nights or more
-
-    weekend - 99.99
-
-    weekday - 89.99 >= 3 nights otherwise 99.99
-
-    Regardless of number of nights - all weekends are 99.99 per night.
-    If a guest is staying 3 or more nights than the weekdays are 89.99 and the weekends are 99.99
-    numOfTotalNights - 3
-    numOfWeekendNights - 1
-    2 nights - 89.99, 1 night 99.99
-
-    numOfTotalNights - 3
-    numOfWeekendNights - 0
-    3 nights - 89.99
-
-
     Examples:
     calculateStayTotal(2, 0) ➔ 199.98
     calculateStayTotal(2, 1) ➔ 199.98
@@ -106,9 +87,19 @@ public class Exercise04_HotelReservation {
     calculateStayTotal(3, 0, true) ➔ 269.97
     calculateStayTotal(3, 1, true) ➔ 269.97
      */
+
     public double calculateStayTotal(int numOfTotalNights, int numOfWeekendNights, boolean isRewardsMember) {
+        if (isRewardsMember) {
+            return DISCOUNT_RATE * numOfTotalNights;
+        } else if (numOfTotalNights <= 2) {
+            return DAILY_RATE * numOfTotalNights;
+        } else if (numOfWeekendNights > 0) {
+            double totalDiscountPrice = (numOfTotalNights - numOfWeekendNights) * DISCOUNT_RATE;
+            double regPrice = numOfWeekendNights * DAILY_RATE;
+            return totalDiscountPrice + regPrice;
+        } else {
+            return numOfTotalNights * DISCOUNT_RATE;
+        }
 
-
-        return 0;
     }
 }
