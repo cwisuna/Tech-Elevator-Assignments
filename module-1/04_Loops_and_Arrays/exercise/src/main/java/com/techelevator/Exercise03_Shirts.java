@@ -17,7 +17,7 @@ public class Exercise03_Shirts {
     buildOrder() → ['S', 'S', 'S', 'M', 'M', 'L']
      */
     public char[] buildOrder() {
-        return new char[] {};    
+        return new char[] {'S', 'S', 'S', 'M', 'M', 'L'};
     }
 
     /*
@@ -31,13 +31,13 @@ public class Exercise03_Shirts {
     Note: The number of shirts ordered is guaranteed to be non-negative.
 
     Examples:
-    buildBulkOrder(6) → ['S', 'M', 'L', 'S', 'M', 'L']    
+    buildBulkOrder(6) → ['S', 'M', 'L', 'S', 'M', 'L']
     buildBulkOrder(3) → ['S', 'M', 'L']
     buildBulkOrder(4) → ['S', 'M', 'L', 'S']
     buildBulkOrder(0) → []
      */
-    public char[] buildBulkOrder(int numberOfShirts) { 
-        return new char[] {};    
+    public char[] buildBulkOrder(int numberOfShirts) {
+        return new char[] {};
     }
 
     /*
