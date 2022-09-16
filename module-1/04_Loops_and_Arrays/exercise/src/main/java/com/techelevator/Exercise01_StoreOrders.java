@@ -34,16 +34,17 @@ public class Exercise01_StoreOrders {
     where each value represents an item in that order.
 
     Create an "order" that contains the following items:
-	 * - small, cheese (SMALL_CHEESE)
-	 * - calzone (CALZONE)
-	 * - large, pepperoni (LARGE_PEPPERONI)
-	 * - spaghetti pie (SPAGHETTI_PIE)
+	 * - small, cheese (SMALL_CHEESE) =
+	 * - calzone (CALZONE) = 40
+	 * - large, pepperoni (LARGE_PEPPERONI) = 31
+	 * - spaghetti pie (SPAGHETTI_PIE) = 41
 
 	 Examples:
 	 createOrder() → [10, 40, 31, 41]
      */
     public int[] createOrder() {
-        return new int[] {};
+        int[] order = {10, 40, 31, 41};
+        return order;
     }
 
     /*
@@ -52,16 +53,34 @@ public class Exercise01_StoreOrders {
     Implement the logic to count the number of calzones sold per day when given an
     array representing each item that her customers ordered that day.
 
+    *
+    how many calzones; calzone = 40
+    count calzones; variable that holds the count number
+    we are given an array
+    *
+
     Examples:
     getCalzoneSales([40, 30, 31, 40, 10]) → 2
     getCalzoneSales([30, 31, 10]) → 0
     getCalzoneSales([]) → 0
      */
     public int getCalzoneSales(int[] orders) {
-        return 0;
+        // return int how many calzones are in orders
+        int calzones = 0;
+            //int i = 0
+        for (int i = 0; i < orders.length; i++) {
+           //i < orders.length
+            int orderItem = orders[i];
+            if (orderItem == 40) {
+                calzones++;
+            }
+            //i++
+        }
+        return calzones;
     }
 
     /*
+
     Sally also needs to know the total revenue for all cheese pizzas sold on any given day.
         * Each small cheese pizza costs $8.
         * Each medium cheese pizza costs $11.
@@ -76,6 +95,27 @@ public class Exercise01_StoreOrders {
     getCheesePizzaRevenue([11, 21]) → 0
      */
     public int getCheesePizzaRevenue(int[] orders) {
-        return 0;
+        // total of all s, m, l cheese pizzas
+
+        int smallCheese = 0;
+        int mediumCheese = 0;
+        int largeCheese = 0;
+        //
+        for (int i = 0; i < orders.length; i++) {
+           int orderItem = orders[i];
+
+           if(orderItem == SMALL_CHEESE) {
+               smallCheese++;
+           } else if (orderItem == MEDIUM_CHEESE) {
+               mediumCheese++;
+           } else if (orderItem == LARGE_CHEESE) {
+               largeCheese++;
+            }
+
+
+        }
+        // small cheese x the price which is 8 + medium cheese and so on ..
+        return smallCheese * 8 + mediumCheese * 11 + largeCheese * 14;
+
     }
 }
