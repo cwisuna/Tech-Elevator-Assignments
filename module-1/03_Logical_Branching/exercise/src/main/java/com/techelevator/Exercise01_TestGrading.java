@@ -40,14 +40,14 @@ public class Exercise01_TestGrading {
     gradeTestNumeric(10) ➔ 0
      */
     public int gradeTestNumeric(int score) {
-        if (score >= 90) {
-            return 3;
-        } else if (score >= 50) {
-            return 2;
-        } else if (score >= 25) {
-            return 1;
-        } else {
-            return 0;
+       if(score >=90) {
+           return 3;
+       } else if ( score >= 50) {
+           return 2;
+       }else if (score >= 25) {
+           return 1;
+       } else {
+           return 0;
         }
     }
     /*
@@ -65,7 +65,7 @@ public class Exercise01_TestGrading {
     gradeTestLetter(70) ➔ 'C'
     gradeTestLetter(45) ➔ 'F'
      */
-        public char gradeTestLetter(int score){
+        public char gradeTestLetter(int score) {
             if (score >= 90) {
                 return 'A';
             } else if (score >= 80) {

@@ -76,8 +76,6 @@ public class Exercise04_Cards {
             newArray[i]= remainingDeck[i+1];
         }
 
-
-
         return newArray;
     }    
 }

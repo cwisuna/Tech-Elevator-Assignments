@@ -23,9 +23,16 @@ public class Exercise06_ElectricBill {
     calculateElectricBill(63.7) ➔ 12.74
     calculateElectricBill(110) ➔ 22.5
      */
+
+    double excessUnits;
+
     public double calculateElectricBill(double unitsUsed) {
-        return 0;
-    }
+        if (unitsUsed <= BASIC_SERVICE_LIMIT) {
+            return unitsUsed * BASIC_SERVICE_RATE;
+        } else if (unitsUsed > BASIC_SERVICE_LIMIT) {
+            return (unitsUsed * BASIC_SERVICE_RATE) + (excessUnits * EXCESS_SERVICE_RATE);
+        }
+}
 
     /*
     Tech Electric realized some of their customers have renewable energy like solar panels.
@@ -42,6 +49,7 @@ public class Exercise06_ElectricBill {
     public double calculateElectricBill(double unitsUsed, boolean hasRenewableEnergy) {
         return 0;
     }
+}
 
     /*
     Tech Electric now allows customers with renewable energy to return electricity back into the grid,

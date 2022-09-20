@@ -22,10 +22,10 @@ public class Exercise02_CanDrive {
      */
 
     public boolean canDrive(boolean hasPermit, boolean withLicensedPassenger) {
-        if (hasPermit && withLicensedPassenger) {
+        if (hasPermit && withLicensedPassenger){
             return true;
-        }
-        return false;
+        } else {
+        }return false;
     }
 
     /*
@@ -41,7 +41,6 @@ public class Exercise02_CanDrive {
         if (hasPermit && withLicensedPassenger && passengerAge >= 21) {
             return true;
         }
-
         return false;
     }
 

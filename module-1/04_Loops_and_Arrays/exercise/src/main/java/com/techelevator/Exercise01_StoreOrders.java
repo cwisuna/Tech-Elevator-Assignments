@@ -67,9 +67,8 @@ public class Exercise01_StoreOrders {
     public int getCalzoneSales(int[] orders) {
         // return int how many calzones are in orders
         int calzones = 0;
-            //int i = 0
         for (int i = 0; i < orders.length; i++) {
-           //i < orders.length
+
             int orderItem = orders[i];
             if (orderItem == 40) {
                 calzones++;

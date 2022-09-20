@@ -24,10 +24,11 @@ public class Exercise05_AcceptPackage {
     acceptPackage(50) ➔ false
      */
     public boolean acceptPackage(int weightPounds) {
-        if (weightPounds <= 40) {
+        if(weightPounds <= 40) {
             return true;
+        } else {
+            return false;
         }
-        return false;
     }
 
     /*

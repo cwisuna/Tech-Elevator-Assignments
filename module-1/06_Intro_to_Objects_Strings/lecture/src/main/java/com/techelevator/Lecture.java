@@ -1,5 +1,8 @@
 package com.techelevator;
 
+import java.sql.SQLOutput;
+import java.util.Locale;
+
 public class Lecture {
 
 	public static void main(String[] args) {
@@ -14,6 +17,8 @@ public class Lecture {
 		 * is not the case for most classes */
 
 		/* create an new instance of String using a literal */
+		String greeting = "Hello World"; // <=== literal
+		System.out.println("greeting " + greeting );
 
 		
 		System.out.println();
@@ -21,6 +26,67 @@ public class Lecture {
 		System.out.println("****** MEMBER METHODS ******");
 		System.out.println("******************************");
 		System.out.println();
+
+		System.out.println("charAt()");
+
+		String name = "Obama";
+		char firstCharacter = name.charAt(0);
+		char fourthCharacter = name.charAt(3);
+
+
+		System.out.println("First character of " + name + " = " + firstCharacter);
+		System.out.println("Fourth character of " + name + " = " + fourthCharacter);
+		System.out.println(name);
+
+
+		System.out.println();
+		System.out.println("contains()");
+		String helloWorld = "Hello World!!";
+
+
+		String hello = "hELlo";
+		boolean result = helloWorld.toLowerCase().contains(hello.toLowerCase());
+		System.out.println("comparison result = " + result);
+
+		String UpperCaseHelloWorld = helloWorld.toLowerCase();
+		String LowerCaseHelloWorld = helloWorld.toLowerCase();
+
+		String LowerCaseHello =  hello.toLowerCase();
+
+		boolean helloComparison = LowerCaseHello.contains(LowerCaseHello);
+
+		System.out.println("Compare lower case hello: " + helloComparison);
+//		System.out.println(UpperCaseHelloWorld);
+//		System.out.println(LowerCaseHelloWorld);
+
+		boolean containsHello = helloWorld.contains(hello);
+		System.out.println("Hello World contains hello: " + containsHello);
+		String bogus = "bogus";
+		System.out.println("Hello World contains Bogus: " + helloWorld.contains(bogus));
+
+		System.out.println();
+		System.out.println("endsWith: " + helloWorld.endsWith("!"));
+		System.out.println("endsWith !d: " + helloWorld.endsWith("d!"));
+		System.out.println("endsWith: bob: " +  helloWorld.endsWith("bob"));
+
+
+
+
+		String tattle = "tattle";
+		System.out.println("=======================");
+		System.out.println(tattle.substring(1,4));
+		System.out.println(tattle.substring(2));
+
+
+
+		String techElevator = "  Tech Elevator  Java Blue  ";
+		int startingPosition = techElevator.trim().toLowerCase().indexOf("java");
+
+		String myClass = techElevator.substring(startingPosition);
+		System.out.println(myClass);
+
+
+
 
 
 		/* Other commonly used methods:
