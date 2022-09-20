@@ -1,5 +1,7 @@
 package com.techelevator;
 
+import java.nio.charset.StandardCharsets;
+
 public class Exercises {
 
 	/*
@@ -8,8 +10,6 @@ public class Exercises {
 	 helloName("Alice") → "Hello Alice!"
 	 helloName("X") → "Hello X!"
 	 */
-
-	String name = "Bob";
 
 	public String helloName(String name) {
 
@@ -25,7 +25,7 @@ public class Exercises {
 	 */
 
 	public String makeAbba(String a, String b) {
-		return a+b+b+a;
+		return a + b + b + a;
 	}
 
 	/*
@@ -38,10 +38,9 @@ public class Exercises {
 	 */
 	public String makeTags(String tag, String word) {
 
+		String html = "<" + tag + ">" + word + "</" + tag + ">";
 
-		String newString = "<" + tag + ">" + word + "</" + tag + ">";
-
-		return newString;
+		return html;
 	}
 
 	/*
@@ -54,7 +53,7 @@ public class Exercises {
 	 */
 	public String makeOutWord(String out, String word) {
 
-		String newString = out.substring(0,2) + word + out.substring(2, 4)  ;
+		String newString = out.substring(0, 2) + word + out.substring(2, 4);
 
 		return newString;
 	}
@@ -67,7 +66,8 @@ public class Exercises {
 	 extraEnd("Hi") → "HiHiHi"
 	 */
 	public String extraEnd(String str) {
-		String newString = str.substring(str.length()-2);
+
+		String newString = str.substring(str.length() - 2);
 		String newString2 = newString + newString + newString;
 
 		return newString2;
@@ -82,8 +82,10 @@ public class Exercises {
 	 firstTwo("ab") → "ab"
 	 */
 	public String firstTwo(String str) {
-
-		return null;
+		if (str.length() < 2) {
+			return str;
+		}
+		return str.substring(0, 2);
 	}
 
 	/*
@@ -93,7 +95,8 @@ public class Exercises {
 	 firstHalf("abcdef") → "abc"
 	 */
 	public String firstHalf(String str) {
-		return null;
+
+		return str.substring(0, str.length() / 2);
 	}
 
 	/*
@@ -104,7 +107,8 @@ public class Exercises {
 	 withoutEnd("coding") → "odin"
 	 */
 	public String withoutEnd(String str) {
-		return null;
+
+		return str.substring(1, str.length() - 1);
 	}
 
 	/*
@@ -116,9 +120,13 @@ public class Exercises {
 	 comboString("aaa", "b") → "baaab"
 	 */
 	public String comboString(String a, String b) {
-		return null;
-	}
+		if (a.length() < b.length()) {
+			return a + b + a;
+		} //else { <---- not needed
+		return b + a + b;
+	//} <--- closing bracket from else
 
+}
 	/*
 	 Given 2 strings, return their concatenation, except omit the first char of each. The strings will
 	 be at least length 1.
@@ -127,7 +135,9 @@ public class Exercises {
 	 nonStart("shotl", "java") → "hotlava"
 	 */
 	public String nonStart(String a, String b) {
-		return null;
+
+
+		return a.substring(1, a.length()) + b.substring(1, b.length());
 	}
 
 	/*
@@ -138,7 +148,7 @@ public class Exercises {
 	 left2("Hi") → "Hi"
 	 */
 	public String left2(String str) {
-		return null;
+		return str.substring(2) + str.substring(0,2);
 	}
 
 	/*
@@ -148,8 +158,17 @@ public class Exercises {
 	 right2("java") → "vaja"
 	 right2("Hi") → "Hi"
 	 */
+
 	public String right2(String str) {
-		return null;
+
+//		Hello;
+//		01234;
+//		Hel;
+//		012;
+//		loHel;
+//		34012
+
+		return str.substring(str.length()-2) + str.substring(0, str.length()-2);
 	}
 
 	/*
@@ -160,9 +179,13 @@ public class Exercises {
 	 theEnd("oh", true) → "o"
 	 */
 	public String theEnd(String str, boolean front) {
-		return null;
-	}
 
+		if(front == true) {
+			return str.substring(0, 1);
+		} else {
+			return str.substring(str.length()-1);
+		}
+	}
 	/*
 	 Given a string, return a version without both the first and last char of the string. The string
 	 may be any length, including 0.
@@ -170,8 +193,19 @@ public class Exercises {
 	 withoutEnd2("abc") → "b"
 	 withoutEnd2("ab") → ""
 	 */
+
+	//Hello --> ell
+	//01234
+
+
 	public String withoutEnd2(String str) {
-		return null;
+
+		int lastChar = str.length() - 1;
+		if(str == "" || str.length() == 1 || str.length() == 2) {
+			return "";
+		}else {
+			return str.substring(1, lastChar);
+		}
 	}
 
 	/*
@@ -182,7 +216,10 @@ public class Exercises {
 	 middleTwo("Practice") → "ct"
 	 */
 	public String middleTwo(String str) {
-		return null;
+		int firstNumb = (str.length()/2)-1;
+		int secondNum = (str.length()/2)+1;
+
+		return str.substring(firstNumb, secondNum);
 	}
 
 	/*
