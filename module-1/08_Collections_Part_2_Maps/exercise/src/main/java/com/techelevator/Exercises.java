@@ -65,7 +65,7 @@ public class Exercises {
 
 	/*
 	 * Modify and return the given Map as follows: if "Peter" has more than 0 money, transfer half of it to "Paul",
-	 * but only if Paul has less than $10s.
+	 * but only if Paul has less than $10's.
 	 *
 	 * Note, monetary amounts are specified in cents: penny=1, nickel=5, ... $1=100, ... $10=1000, ...
 	 *
