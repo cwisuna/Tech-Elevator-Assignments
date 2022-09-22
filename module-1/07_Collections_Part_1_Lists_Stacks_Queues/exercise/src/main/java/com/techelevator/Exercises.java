@@ -200,7 +200,6 @@ public class Exercises {
 //			}
 		//}
 
-
 		return listThree;
 	}
 
