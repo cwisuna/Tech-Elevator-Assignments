@@ -11,35 +11,26 @@ public class Elevator {
     public Elevator(int numberOfLevels){
         this.numberOfFloors = numberOfLevels;
         this.currentFloor = 1;
+        doorOpen = false;
 
     }
 
 
     //methods
     public void openDoor(){
-        doorOpen = true;
+        if(doorOpen == false){
+            doorOpen = true;
+        }
     }
     public void closeDoor(){
-        doorOpen = false;
-    }
-    public void goUp(int desiredFloor){
-        if(doorOpen){
-            desiredFloor = currentFloor;
-        }if (desiredFloor > currentFloor && desiredFloor <= numberOfFloors){
-            currentFloor = desiredFloor;
-        }
-    }
-    public void goDown(int desiredFloor) {
-        if (doorOpen) {
-            desiredFloor = currentFloor;
+        if(doorOpen == true){
             doorOpen = false;
         }
+    }
+    public void goUp(int desiredFloor){
 
-        if (desiredFloor < currentFloor && desiredFloor >= 1) {
-            currentFloor = desiredFloor;
-
-        }
-
+    }
+    public void goDown(int desiredFloor) {
 
     }
 
