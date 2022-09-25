@@ -5,7 +5,8 @@ public class Lecture {
     1. This method is named returnNotOne and it returns an int. Change
     it so that it returns something other than a 1.
     */
-    public int returnNotOne() {return 2;
+    public int returnNotOne() {
+        return 2;
     }
 
     /*
@@ -13,27 +14,32 @@ public class Lecture {
     it so that it returns something other than a 0.5.
     */
     public double returnNotHalf() {
-        return 1.5;
+        return 0.6;
     }
 
     /*
     3. This method needs to return a String. Fix it to return a valid String.
     */
     public String returnName() {
-        return "Good job Chris";
+        return "Chris";
     }
 
     /*
     4. This method currently returns an int. Change it so that it returns a double.
     */
     public double returnDoubleOfTwo() {
-        return 2;
+
+        int x = 2;
+        return (double) x;
     }
+
     /*
+
     5. This method should return the language that you're learning. Change
     it so that it does that.
     */
     public String returnNameOfLanguage() {
+
         return "Java";
     }
 
@@ -45,9 +51,9 @@ public class Lecture {
     public boolean returnTrueFromIf() {
         if (true) {
             return true;
+        } else {
+            return false;
         }
-
-        return false;
     }
 
     /*
@@ -59,9 +65,9 @@ public class Lecture {
         if (1 == 1) {
             return true;
         }
-
         return false;
     }
+
 
     /*
     8. This method checks a parameter passed to the method to see if it's
@@ -72,9 +78,9 @@ public class Lecture {
         if (number > 5) {
             return true;
         } else {
+
             return false;
         }
-//        return false;
     }
 
     /*
@@ -83,7 +89,7 @@ public class Lecture {
     */
 
     public boolean returnTrueWhenGreaterThanFiveInOneLine(int number) {
-        return (number > 5); // What can we put here that returns a boolean that we want?
+        return number > 5 ? true : false;
     }
 
     /*
@@ -94,7 +100,7 @@ public class Lecture {
     */
     public int returnNumberAfterAddThreeAndAddFive(int number, boolean addThree, boolean addFive) {
         if (addThree) {
-            number = number + 3;
+            number += 3;
         }
 
         // We can't use an else here. They could both be true, so we have to check each one.
@@ -110,13 +116,11 @@ public class Lecture {
     11. Write an if statement that returns "Fizz" if the parameter is 3 and returns an empty String for anything else.
     */
     public String returnFizzIfThree(int number) {
-        String result = "";
-
         if (number == 3) {
-            result = "Fizz";
+            return "Fizz";
+        } else {
+            return "";
         }
-
-        return result;
     }
 
     /*
@@ -130,17 +134,15 @@ public class Lecture {
     13. Write an if/else statement that returns "Fizz" if the parameter is 3, "Buzz" if the parameter is 5 and an empty String for anything else.
     */
     public String returnFizzOrBuzzOrNothing(int number) {
-        String result = "";
         if (number == 3) {
-            result = "Fizz";
+            return "Fizz";
+
+        } else if (number == 5) {
+
+            return "Buzz";
+        } else {
+            return "";
         }
-        else if(number == 5){
-            result = "Buzz";
-        }
-        else  {
-            result = "";
-        }
-        return result;
     }
 
     /*
@@ -173,5 +175,4 @@ public class Lecture {
             return "Minor";
         }
     }
-
 }

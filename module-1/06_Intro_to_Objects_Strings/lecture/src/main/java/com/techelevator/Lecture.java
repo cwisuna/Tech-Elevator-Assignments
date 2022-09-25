@@ -17,8 +17,8 @@ public class Lecture {
 		 * is not the case for most classes */
 
 		/* create an new instance of String using a literal */
-		String greeting = "Hello World"; // <=== literal
-		System.out.println("greeting " + greeting );
+
+
 
 		
 		System.out.println();
@@ -27,64 +27,20 @@ public class Lecture {
 		System.out.println("******************************");
 		System.out.println();
 
-		System.out.println("charAt()");
 
-		String name = "Obama";
-		char firstCharacter = name.charAt(0);
-		char fourthCharacter = name.charAt(3);
-
-
-		System.out.println("First character of " + name + " = " + firstCharacter);
-		System.out.println("Fourth character of " + name + " = " + fourthCharacter);
-		System.out.println(name);
+		String name = "JarJar Binks";
+		char first = name.charAt(0);
+		char fourth = name.charAt(3);
+		System.out.println(first);
+		System.out.println(fourth);
 
 
-		System.out.println();
-		System.out.println("contains()");
-		String helloWorld = "Hello World!!";
-
-
-		String hello = "hELlo";
-		boolean result = helloWorld.toLowerCase().contains(hello.toLowerCase());
-		System.out.println("comparison result = " + result);
-
-		String UpperCaseHelloWorld = helloWorld.toLowerCase();
-		String LowerCaseHelloWorld = helloWorld.toLowerCase();
-
-		String LowerCaseHello =  hello.toLowerCase();
-
-		boolean helloComparison = LowerCaseHello.contains(LowerCaseHello);
-
-		System.out.println("Compare lower case hello: " + helloComparison);
-//		System.out.println(UpperCaseHelloWorld);
-//		System.out.println(LowerCaseHelloWorld);
-
-		boolean containsHello = helloWorld.contains(hello);
-		System.out.println("Hello World contains hello: " + containsHello);
-		String bogus = "bogus";
-		System.out.println("Hello World contains Bogus: " + helloWorld.contains(bogus));
-
-		System.out.println();
-		System.out.println("endsWith: " + helloWorld.endsWith("!"));
-		System.out.println("endsWith !d: " + helloWorld.endsWith("d!"));
-		System.out.println("endsWith: bob: " +  helloWorld.endsWith("bob"));
-
-
-
-
-		String tattle = "tattle";
-		System.out.println("=======================");
-		System.out.println(tattle.substring(1,4));
-		System.out.println(tattle.substring(2));
-
-
-
-		String techElevator = "  Tech Elevator  Java Blue  ";
-		int startingPosition = techElevator.trim().toLowerCase().indexOf("java");
-
-		String myClass = techElevator.substring(startingPosition);
-		System.out.println(myClass);
-
+		System.out.println("+++++++++++++++++CONTAINS+++++++++++++++");
+		String hello = "Hello, World";
+		boolean hasHello = hello.contains("Hello");
+		System.out.println("hasHello = " + hasHello);
+		boolean hasBogus = hello.contains("Bogus");
+		System.out.println("hasBogus = " + hasBogus);
 
 
 
@@ -133,5 +89,31 @@ public class Lecture {
 			System.out.println(hello1 + " is not equal to " + hello2);
 		}
 
+		String lectureString = "It was the best of times, it was the worst of times... ";
+		String chrisString = lectureString.toLowerCase();
+		boolean containsWorst = chrisString.contains("worst");
+		System.out.println(containsWorst);
+
+		System.out.println();
+		System.out.println("====================================");
+
+		String favoriteStarWarsCharacter = "Boba Fett, Darth Vader, Anakin Skywalker, Padme, Leia, Obi-Wan";
+		int fIsAt = 0;
+		fIsAt = favoriteStarWarsCharacter.indexOf('F');
+		System.out.println(fIsAt);
+
+		String characterFirstName;
+		int spaceCharacter = favoriteStarWarsCharacter.indexOf(' ');
+		characterFirstName = favoriteStarWarsCharacter.substring(0, spaceCharacter);
+		System.out.println(characterFirstName);
+
+		String[] nameElements  = favoriteStarWarsCharacter.split(", ");
+		for (int i = 0; i < nameElements.length ; i++) {
+			System.out.println(nameElements[i]);
+		}
+		}
+
+
+
 	}
-}
+

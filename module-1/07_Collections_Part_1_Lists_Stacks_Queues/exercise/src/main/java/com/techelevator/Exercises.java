@@ -16,11 +16,12 @@ public class Exercises {
 	 array2List( {"Left", "Right", "Forward", "Back"} )  ->  ["Left", "Right", "Forward", "Back"]
 	 */
 	public List<String> array2List(String[] fruits) {
-		List<String> arraytoList = new ArrayList<String>();
+		List<String> fruitList = new ArrayList<>();
 		for (String fruit : fruits) {
-			arraytoList.add(fruit);
+
+			fruitList.add(fruit);
 		}
-		return arraytoList;
+		return fruitList;
 	}
 
 	/*
@@ -45,13 +46,13 @@ public class Exercises {
 	 */
 
 	public List<String> no4LetterWords(String[] stringArray) {
-		List<String> stringList = new ArrayList<String>();
-		for (String word : stringArray) {
-			if (word.length() != 4) {
-				stringList.add(word);
+		List<String> vehicleList = new ArrayList<String>();
+		for (String vehicle : stringArray) {
+			if (vehicle.length() != 4) {
+				vehicleList.add(vehicle);
 			}
 		}
-		return stringList;
+		return vehicleList;
 	}
 
 	/*
@@ -66,6 +67,8 @@ public class Exercises {
 			newList.add(number / 2.0);
 		}
 		return newList;
+
+
 	}
 
 	/*
@@ -144,20 +147,9 @@ public class Exercises {
 	 */
 	public List<String> fizzBuzzList(Integer[] integerArray) {
 
-		List<String> fizzy = new ArrayList<>();
-		for (Integer num : integerArray) {
-			if(num % 3 == 0 && num % 5 == 0) {
-				fizzy.add("FizzBuzz");
-			}
-			else if (num % 3 == 0) {
-				fizzy.add("Fizz");
-			} else if ( num % 5 == 0){
-				fizzy.add("Buzz");
-			} else {
-				fizzy.add(num.toString());
-			}
-		}
-		return fizzy;
+		List<String> myList = new ArrayList<>();
+
+		for(St)
 	}
 
 	/*

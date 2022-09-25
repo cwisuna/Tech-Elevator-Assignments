@@ -45,10 +45,11 @@ public class Exercise05_AcceptPackage {
     acceptPackage(50, 4, 5, 10) ➔ false
      */
     public boolean acceptPackage(int weightPounds, int lengthInches, int widthInches, int heightInches) {
-        if (weightPounds <= 40 && ((lengthInches * widthInches * heightInches)) <= MAX_CUBIC_INCHES) {
+        if(weightPounds <= 40 && (lengthInches*widthInches*heightInches) <= MAX_CUBIC_INCHES) {
             return true;
+        } else {
+            return false;
         }
-        return false;
     }
 
     /*

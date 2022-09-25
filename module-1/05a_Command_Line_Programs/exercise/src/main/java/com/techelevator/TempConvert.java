@@ -24,7 +24,7 @@ public class TempConvert {
 		Scanner tempConvert	= new Scanner(System.in);
 
 		System.out.println("Please enter the temperature: ");
-		int userInput = Integer.parseInt(tempConvert.nextLine());
+		int userInput = tempConvert.nextInt();
 
 		System.out.println("Is the temperature in (C)elsius, or (F)ahrenheit? ");
 		String celandFahr = tempConvert.nextLine();

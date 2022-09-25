@@ -29,25 +29,36 @@ public class Exercises {
         3. 3 raccoons are playing in the woods. 2 go home to eat dinner. How
         many raccoons are left in the woods?
         */
-		int racoonsInWood = 3;
-		int racoonsGoneHome = 2;
-		int numberOfRacoonsLeft = racoonsInWood - racoonsGoneHome;
-		System.out.println(numberOfRacoonsLeft);
+
+
+		int racoonsInWoods = 3;
+		int racoonsGoHome = 2;
+		int racoonsLeft = racoonsInWoods - racoonsGoHome;
+		System.out.println(racoonsLeft);
+
+
+
+
         /* Exercise 4
         4. There are 5 flowers and 3 bees. How many less bees than flowers?
         */
 		int flowers = 5;
 		int bees = 3;
-		int lessBeesThanFlowers = flowers - bees;
+		int lessBeesThanFlowers = flowers-bees;
+
 		System.out.println(lessBeesThanFlowers);
+
         /* Exercise 5
         5. 1 lonely pigeon was eating breadcrumbs. Another pigeon came to eat
         breadcrumbs, too. How many pigeons are eating breadcrumbs now?
         */
-		int lonleyPigeon = 1;
-		int anotherPigeon = 1;
-		int totalPigeons = lonleyPigeon + anotherPigeon;
+
+		int lonley = 1;
+		int another = 1;
+		int totalPigeons = lonley + another;
 		System.out.println(totalPigeons);
+
+
         /* Exercise 6
         6. 3 owls were sitting on the fence. 2 more owls joined them. How many
         owls are on the fence now?
@@ -85,11 +96,15 @@ public class Exercises {
         10. Mrs. Hilt found a quarter, 1 dime, and 2 nickels. How much money did
         she find?
         */
-		double quarter = 0.25;
-		double dime = 0.10;
-		double nickel = 0.05;
-		double totalMoney = dime + quarter + (nickel) *2;
-		System.out.println(totalMoney);
+
+		double quarter = .25;
+		double dime = .10;
+		double nickel = .05;
+		double total = quarter + dime + (nickel * 2);
+
+		System.out.println(total);
+
+
         /* Exercise 11
         11. Mrs. Hilt's favorite first grade classes are baking muffins. Mrs. Brier's
         class bakes 18 muffins, Mrs. MacAdams's class bakes 20 muffins, and
@@ -177,7 +192,7 @@ public class Exercises {
         21. Mrs. Hilt bought an ice cream cone for 99 cents. How much would 2 ice
         cream cones cost?
         */
-		double totalConesCost = 0.99d * 2;
+		double totalConesCost = 0.99 * 2;
 		System.out.println(totalConesCost);
         /* Exercise 22
         22. Mrs. Hilt wants to make a border around her garden. She needs 125
@@ -191,7 +206,8 @@ public class Exercises {
         she have left?
         */
 		int currentMarbles = 38;
-		int remainderMarbles = currentMarbles-15;
+		int lost = 15;
+		int remainderMarbles = currentMarbles-lost;
 		System.out.println(remainderMarbles);
         /* Exercise 24
         24. Mrs. Hilt and her sister drove to a concert 78 miles away. They drove 32

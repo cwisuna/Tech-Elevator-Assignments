@@ -25,7 +25,18 @@ public class Exercises {
 	 */
 
 	public String makeAbba(String a, String b) {
-		return a + b + b + a;
+		String outPut= "";
+
+
+
+
+		outPut = a + b;
+		outPut = b + a;
+
+
+
+
+		return outPut;
 	}
 
 	/*
@@ -120,12 +131,11 @@ public class Exercises {
 	 comboString("aaa", "b") → "baaab"
 	 */
 	public String comboString(String a, String b) {
-		if (a.length() < b.length()) {
-			return a + b + a;
-		} //else { <---- not needed
-		return b + a + b;
-	//} <--- closing bracket from else
-
+		if(a.length() < b.length()){
+			return a+b+a;
+		}else {
+			return b+a+b;
+		}
 }
 	/*
 	 Given 2 strings, return their concatenation, except omit the first char of each. The strings will

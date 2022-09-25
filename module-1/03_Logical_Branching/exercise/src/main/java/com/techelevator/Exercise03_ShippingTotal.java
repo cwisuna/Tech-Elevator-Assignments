@@ -22,10 +22,12 @@ public class Exercise03_ShippingTotal {
     calculateShippingTotal(45) ➔ 23.75
      */
     public double calculateShippingTotal(int weightPounds) {
+        int excessWeight = weightPounds - 40;
+
         if (weightPounds <= 40) {
             return UP_TO_40_LB_RATE * weightPounds;
         } else {
-            int excessWeight = weightPounds - 40;
+
             return (MAX_WEIGHT_POUNDS * UP_TO_40_LB_RATE) + (excessWeight * OVER_40_LB_RATE);
         }
     }

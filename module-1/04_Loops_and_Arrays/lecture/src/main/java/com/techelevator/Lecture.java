@@ -23,7 +23,7 @@ public class Lecture {
     */
     public int returnLastElement() {
         int[] portNumbers = { 80, 8080, 443 };
-        return portNumbers[portNumbers.length -1];
+        return portNumbers[2];
     }
 
     /*
@@ -39,7 +39,8 @@ public class Lecture {
     5. Return the last element of the array from the parameters
     */
     public int returnLastElementOfParam(int[] passedInArray) {
-        return passedInArray[passedInArray.length -1];
+
+        return passedInArray[passedInArray.length-1];
     }
 
     /*
@@ -47,14 +48,15 @@ public class Lecture {
        return it? There are a couple of different ways of doing this, what can you come up with?
     */
     public int returnVariableFromBlock(int number) {
-        return number * 5;
-//        { // A new block with scoped variables
-//
-//             int result = number * 5;
-//            return result;
-//        } // the result variable disappears here
-//
-//        return number; // We want to return result here. How?
+        int result;
+
+        {                                                   // A new block with scoped variables
+
+             result = number * 5;
+
+        }                                                   // the result variable disappears here
+
+        return result;                                     // We want to return result here. How?
     }
 
     /*
@@ -106,7 +108,7 @@ public class Lecture {
             counter++;
         }
 
-        return counter == 4; // What should the number be to return true?
+        return counter == 4    ; // What should the number be to return true?
     }
 
     /*

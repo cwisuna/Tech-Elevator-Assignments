@@ -23,16 +23,13 @@ public class Exercise06_ElectricBill {
     calculateElectricBill(63.7) ➔ 12.74
     calculateElectricBill(110) ➔ 22.5
      */
-
-    double excessUnits;
-
     public double calculateElectricBill(double unitsUsed) {
         if (unitsUsed <= BASIC_SERVICE_LIMIT) {
             return unitsUsed * BASIC_SERVICE_RATE;
-        } else if (unitsUsed > BASIC_SERVICE_LIMIT) {
-            return (unitsUsed * BASIC_SERVICE_RATE) + (excessUnits * EXCESS_SERVICE_RATE);
+        } else {
+            return (BASIC_SERVICE_LIMIT * BASIC_SERVICE_RATE) + ((unitsUsed - BASIC_SERVICE_LIMIT) * EXCESS_SERVICE_RATE);
         }
-}
+    }
 
     /*
     Tech Electric realized some of their customers have renewable energy like solar panels.
@@ -47,9 +44,20 @@ public class Exercise06_ElectricBill {
     calculateElectricBill(110, true) ➔ 21.375
      */
     public double calculateElectricBill(double unitsUsed, boolean hasRenewableEnergy) {
-        return 0;
+        if (hasRenewableEnergy == true) {
+            if (unitsUsed <= BASIC_SERVICE_LIMIT) {
+                return (unitsUsed * BASIC_SERVICE_RATE) * 0.95;
+            } else {
+                return ((BASIC_SERVICE_LIMIT * BASIC_SERVICE_RATE) + ((unitsUsed - BASIC_SERVICE_LIMIT) * EXCESS_SERVICE_RATE)) * 0.95;
+            }
+        } else {
+            if (unitsUsed <= BASIC_SERVICE_LIMIT) {
+                return unitsUsed * BASIC_SERVICE_RATE;
+            } else {
+                return (BASIC_SERVICE_LIMIT * BASIC_SERVICE_RATE) + ((unitsUsed - BASIC_SERVICE_LIMIT) * EXCESS_SERVICE_RATE);
+            }
+        }
     }
-}
 
     /*
     Tech Electric now allows customers with renewable energy to return electricity back into the grid,
@@ -74,6 +82,19 @@ public class Exercise06_ElectricBill {
     calculateElectricBill(110, 120) ➔ -2.0
      */
     public double calculateElectricBill(double unitsUsed, double unitsReturned) {
-        return 0;
+        double netUsage = unitsUsed - unitsReturned;
+        if (netUsage < 0 || unitsReturned == 0.0) {
+            if (netUsage <= BASIC_SERVICE_LIMIT) {
+                return netUsage * BASIC_SERVICE_RATE;
+            } else {
+                return (BASIC_SERVICE_LIMIT * BASIC_SERVICE_RATE) + ((netUsage - BASIC_SERVICE_LIMIT) * EXCESS_SERVICE_RATE);
+            }
+        } else {
+            if (netUsage <= BASIC_SERVICE_LIMIT) {
+                return (netUsage * BASIC_SERVICE_RATE) * 0.95;
+            } else {
+                return ((BASIC_SERVICE_LIMIT * BASIC_SERVICE_RATE) + ((netUsage - BASIC_SERVICE_LIMIT) * EXCESS_SERVICE_RATE)) * 0.95;
+            }
+        }
     }
 }
