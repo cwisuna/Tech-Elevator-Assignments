@@ -29,14 +29,13 @@ public class Bookstore {
         Movie toyStory = new Movie("Toy Story", "G", 81, 19.99);
         shoppingCart.add(toyStory);
 
-// Shirley, you can't be serious!
+
         Movie airplane = new Movie("Airplane!", "PG", 88, 14.99);
         shoppingCart.add(airplane);
 
         Music sylar = new Music("Sylar - Seasons", "8", 31, 9.99);
         shoppingCart.add(sylar);
-
-// Shirley, you can't be serious!
+        
         Music bieber = new Music("Justin Bieber - Justice", "8", 35, 12.99);
         shoppingCart.add(bieber);
 
