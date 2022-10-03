@@ -14,7 +14,7 @@ public class ExceptionInClass{
         System.out.println(cities[0]);
         System.out.println(cities[1]);
         System.out.println(cities[2]);
-        System.out.println(cities[3]);  // This statement will throw an ArrayIndexOutOfBoundsException
+     //   System.out.println(cities[3]);  // This statement will throw an ArrayIndexOutOfBoundsException
         System.out.println("are all in Ohio."); // This line won't execute because the previous statement throws an Exception
 
 
@@ -23,7 +23,7 @@ public class ExceptionInClass{
     /* try/catch blocks will also catch Exceptions that are thrown from method calls further down the stack */
 
         System.out.println("Hey ya'll, watch this!");
-        doSomethingDangerous();  // throws an ArrayIndexOutOfBoundsException
+      //  doSomethingDangerous();  // throws an ArrayIndexOutOfBoundsException
         System.out.println("See, I told you nothing would go wrong!");
 
 
@@ -45,8 +45,8 @@ public class ExceptionInClass{
     int nights = -3;
     int numberOfGuests = 2;
 
-        double amountOwed = calculateHotelRoomCharges(nights, numberOfGuests);
-        System.out.println("Total owed for "+numberOfGuests+" guests for "+nights+" nights is $"+amountOwed);
+//        double amountOwed = calculateHotelRoomCharges(nights, numberOfGuests);
+//        System.out.println("Total owed for "+numberOfGuests+" guests for "+nights+" nights is $"+amountOwed);
 
 		System.out.println();
 
@@ -69,7 +69,7 @@ public class ExceptionInClass{
      * The stacktrace contains a record of where the Exception was thrown and all of the
      * method calls that lead up to the Exception being thrown. */
 
-        doSomethingDangerous(); // throws an ArrayIndexOutOfBoundsException
+        //doSomethingDangerous(); // throws an ArrayIndexOutOfBoundsException
 
 		System.out.println();
 }
