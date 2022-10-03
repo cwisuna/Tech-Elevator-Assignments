@@ -55,7 +55,6 @@ public class AnimalGroupName {
         } else {
             return "unknown";
         }
-
         // this is an easier way of doing what we did above
         //return animals.getOrDefault(animalName.toLowerCase(),"unknown");
     }

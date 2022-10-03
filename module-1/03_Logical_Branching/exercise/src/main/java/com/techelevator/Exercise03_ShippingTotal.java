@@ -22,13 +22,11 @@ public class Exercise03_ShippingTotal {
     calculateShippingTotal(45) ➔ 23.75
      */
     public double calculateShippingTotal(int weightPounds) {
-        int excessWeight = weightPounds - 40;
-
         if (weightPounds <= 40) {
-            return UP_TO_40_LB_RATE * weightPounds;
+            return weightPounds * UP_TO_40_LB_RATE;
         } else {
-
-            return (MAX_WEIGHT_POUNDS * UP_TO_40_LB_RATE) + (excessWeight * OVER_40_LB_RATE);
+            int excessWeight = weightPounds - 40;
+            return (40 * UP_TO_40_LB_RATE) + (excessWeight * OVER_40_LB_RATE);
         }
     }
 
@@ -47,9 +45,7 @@ public class Exercise03_ShippingTotal {
     public double calculateShippingTotal(int weightPounds, boolean hasDiscount) {
         double currentCost = calculateShippingTotal(weightPounds);
         if (hasDiscount) {
-
             return currentCost * .9;
-
         } else {
             return currentCost;
         }
@@ -69,6 +65,6 @@ public class Exercise03_ShippingTotal {
     public double calculateShippingTotal(int weightPounds, double discountPercentage) {
         double currentCost = calculateShippingTotal(weightPounds);
         double discountAmount = 1 - discountPercentage;
-        return currentCost* discountAmount;
+        return currentCost * discountAmount;
     }
 }

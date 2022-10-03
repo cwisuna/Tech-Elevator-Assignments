@@ -37,10 +37,10 @@ public class Exercise04_HotelReservation {
   //  DAIL_RATE  - 99.99              DISCOUNTED RATE - 89.99
 
     public double calculateStayTotal(int numberOfNights) {
-        if (numberOfNights <=2) {
-        return DAILY_RATE * numberOfNights;
-        } else {
-            return DISCOUNT_RATE * numberOfNights;
+       if(numberOfNights <=2 ){
+           return DAILY_RATE*numberOfNights;
+       } else {
+           return DISCOUNT_RATE*numberOfNights;
         }
     }
 
