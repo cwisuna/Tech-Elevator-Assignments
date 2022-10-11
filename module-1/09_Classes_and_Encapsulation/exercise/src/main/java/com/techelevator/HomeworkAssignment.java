@@ -1,44 +1,44 @@
 package com.techelevator;
 
 public class HomeworkAssignment {
-    private int earnedMarks;
-    private int possibleMarks;
-    private String submitterName;
+   private int earnedMarks;
+   private int possibleMarks;
+   private String submitterName;
 
-
-    public HomeworkAssignment(int possibleMarks, String submitterName) {
-        this.possibleMarks = possibleMarks;
-        this.submitterName = submitterName;
-    }
 
     public int getEarnedMarks() {
-        return this.earnedMarks;
+        return earnedMarks;
     }
 
     public int getPossibleMarks() {
-        return this.possibleMarks;
+        return possibleMarks;
     }
 
     public String getSubmitterName() {
-        return this.submitterName;
+        return submitterName;
     }
 
     public void setEarnedMarks(int earnedMarks) {
         this.earnedMarks = earnedMarks;
     }
 
+    public HomeworkAssignment(int possibleMarks, String submitterName) {
+        this.possibleMarks = possibleMarks;
+        this.submitterName = submitterName;
+    }
+
     public String getLetterGrade(){
-        double percentage = (double) this.earnedMarks/this.possibleMarks;
-        if(percentage >= 0.9){
-            return "A";
-        }else if(percentage >= 0.8){
-            return "B";
-        }else if(percentage >= 0.7) {
-            return "C";
-        }else if(percentage >= 0.6){
-            return "D";
-        } else {
-            return "F";
+       double percentage = (double) earnedMarks/possibleMarks;
+       if (percentage >= .9){
+           return "A";
+       }if (percentage >= .8){
+           return "B";
+        }if (percentage >= .7){
+           return "C";
+        }if (percentage >= .6){
+           return "D";
+        }else{
+           return "F";
         }
     }
 

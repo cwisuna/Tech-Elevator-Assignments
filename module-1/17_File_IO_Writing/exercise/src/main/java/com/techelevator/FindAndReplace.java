@@ -31,11 +31,12 @@ public class FindAndReplace {
 
                 // this scanner is opening/reading sourceFile               //this printWriter is printing text to destination
         try(Scanner openSourceFile = new Scanner(sourceFile); PrintWriter textToDestination = new PrintWriter(destination)){
-            while(openSourceFile.hasNextLine()){                        //while loop is reading through the openSourceFile if other line exists
+
+            while(openSourceFile.hasNextLine()){                           //while loop is reading through the openSourceFile if other line exists
 
                 String line = openSourceFile.nextLine();
 
-                textToDestination.println(line.replace(searchWord,replacementWord));      //textToDestination is replacing text searchWord on line with replacment Word
+                textToDestination.println(line.replace(searchWord,replacementWord));   //textToDestination is replacing text searchWord on line with replacment Word
 
             }
 
