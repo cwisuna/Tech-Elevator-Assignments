@@ -4,3 +4,4 @@
 UPDATE movie 
 SET overview = overview || ' This is a long movie.'
 WHERE length_minutes > 210
+
