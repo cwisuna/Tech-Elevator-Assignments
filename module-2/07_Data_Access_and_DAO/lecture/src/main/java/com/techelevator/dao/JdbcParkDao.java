@@ -18,6 +18,14 @@ public class JdbcParkDao implements ParkDao {
 
     @Override
     public Park getPark(int parkId) {
+        Park park  = new Park;
+        String sql = "SELECT park_id, park_name, date_established, has_camping"
+        + " FROM parK " + "WHERE park_id = ? ";
+        SqlRowSet result = jdbcTemplate.queryForRowSet(sql, parkId);
+        if(result.next()){
+            park = mapRowToPark(result);
+        }
+
         return new Park();
     }
 
@@ -52,6 +60,13 @@ public class JdbcParkDao implements ParkDao {
     }
 
     private Park mapRowToPark(SqlRowSet rowSet) {
+        Park park = new Park();
+        park.setParkId(rowSet.getInt("park_id"));
+        park.setParkName(rowSet.getString("park_name"));
+        park.setDateEstablished(rowSet.getDate("date_established").toLocalDate());
+        park.setArea(rowSet.getDouble("area"));
+        park.setHasCamping(rowSet.getBoolean("has_camping"));
+
         return new Park();
     }
 }

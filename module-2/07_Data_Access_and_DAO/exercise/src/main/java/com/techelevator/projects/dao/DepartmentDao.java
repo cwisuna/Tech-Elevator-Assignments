@@ -20,6 +20,8 @@ public interface DepartmentDao {
 	 *
 	 * @return all departments as Department objects in a List
 	 */
+
+
 	public List<Department> getAllDepartments();
 
 	/**

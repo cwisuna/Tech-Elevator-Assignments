@@ -20,7 +20,22 @@ public class JdbcProjectDao implements ProjectDao {
 
 	@Override
 	public Project getProject(int projectId) {
-		return new Project(0, "Not Implemented Yet", null, null);
+
+		Project project = new Project();
+
+		String sql = " SELECT * " + " FROM project " + "WHERE project_id = ? ;";
+
+		SqlRowSet result = jdbcTemplate.queryForRowSet(sql, projectId);
+
+		if(result.next()){
+			project.setId(result.getInt("project_id"));
+			project.setName(result.getString("name"));
+			project.setFromDate(result.getDate("from_date").toLocalDate());
+			project.setToDate(result.getDate("to_date").toLocalDate());
+		}else{
+			return null;
+		}
+		return project;
 	}
 
 	@Override
