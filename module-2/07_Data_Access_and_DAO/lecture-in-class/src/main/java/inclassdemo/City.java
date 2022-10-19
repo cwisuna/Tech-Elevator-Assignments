@@ -76,6 +76,6 @@ public class City {
     }
     @Override
     public String toString() {
-        return String.format("%s, %s (ID: %d)", getCityName(), getState_name(), getCityId());
+        return String.format("%s, %s  - %s (ID: %d)", getCityName(), getStateAbbreviation(), getState_name(), getCityId());
     }
 }

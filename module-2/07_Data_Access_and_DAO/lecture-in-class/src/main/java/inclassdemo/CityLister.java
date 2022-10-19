@@ -22,6 +22,7 @@ public class CityLister {
                     "SELECT   city.city_id, city.city_name, " +
                             " city.population as num_folks , " +
                             " city.area , " +
+                            " city.state_abbreviation, " +
                             " state.state_name" +
                         " FROM city " +
                         " INNER JOIN state " +
@@ -51,6 +52,7 @@ public class CityLister {
         newCity.setCityId( sqlResult.getInt("city_id") );
         newCity.setCityName( sqlResult.getString("city_name"));
         newCity.setPopulation( sqlResult.getInt("num_folks"));
+        newCity.setStateAbbreviation( sqlResult. getString("state_abbreviation"));
         newCity.setState_name( sqlResult.getString("state_name"));
         newCity.setArea( sqlResult.getDouble("area"));
         return newCity;
