@@ -141,6 +141,8 @@ public class USCitiesAndParksCLI {
     }
 
     private void deletePark(Park parkToDelete) {
+        String response = promptForString("Enter the park state: ");
+        parkDao.removeParkFromState(parkToDelete.getParkId(),response);
         parkDao.deletePark(parkToDelete.getParkId());
         System.out.format("\nDeleted %s\n\n", parkToDelete);
     }

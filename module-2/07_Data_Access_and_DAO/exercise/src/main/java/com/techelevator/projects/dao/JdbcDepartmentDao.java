@@ -22,7 +22,9 @@ public class JdbcDepartmentDao implements DepartmentDao {
 	public Department getDepartment(int id) {
 
 		Department department = new Department();
-		String sql = " SELECT * " + "FROM department" + " WHERE department_id = ?;";
+		String sql = " SELECT * " +
+				" FROM department " +
+				" WHERE department_id = ? ";
 
 		SqlRowSet result = jdbcTemplate.queryForRowSet(sql, id);
 
@@ -57,7 +59,9 @@ public class JdbcDepartmentDao implements DepartmentDao {
 	@Override
 	public void updateDepartment(Department updatedDepartment) {
 
-		String sql = " UPDATE department "  +  " SET name = ? " + " WHERE department_id = ? ";
+		String sql = " UPDATE department "  +
+				" SET name = ? " +
+				" WHERE department_id = ? ";
 		jdbcTemplate.update(sql, updatedDepartment.getName(), updatedDepartment.getId());
 
 	}

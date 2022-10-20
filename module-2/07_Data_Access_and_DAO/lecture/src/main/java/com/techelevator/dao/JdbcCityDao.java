@@ -46,8 +46,7 @@ public class JdbcCityDao implements CityDao {
     public City createCity(City city) {
         String sql = "INSERT INTO city (city_name, state_abbreviation, population, area) " +
                      "VALUES (?, ?, ?, ?) RETURNING city_id;";
-        Integer newId = jdbcTemplate.queryForObject(sql, Integer.class,
-                city.getCityName(), city.getStateAbbreviation(), city.getPopulation(), city.getArea());
+        Integer newId = jdbcTemplate.queryForObject(sql, Integer.class, city.getCityName(), city.getStateAbbreviation(), city.getPopulation(), city.getArea());
 
         return getCity(newId);
     }

@@ -13,6 +13,7 @@ public interface DepartmentDao {
 	 * @param departmentId the department id to get from the datastore
 	 * @return a filled out department object
 	 */
+
 	public Department getDepartment(int departmentId);
 
 	/**
@@ -20,7 +21,6 @@ public interface DepartmentDao {
 	 *
 	 * @return all departments as Department objects in a List
 	 */
-
 
 	public List<Department> getAllDepartments();
 
