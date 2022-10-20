@@ -24,7 +24,7 @@ public class JdbcEmployeeDao implements EmployeeDao {
 
 		List<Employee> employeeList = new ArrayList<>();
 
-		String sql = " SELECT employee_id, department_id, first_name, last_name, birth_date, hire_date FROM employee ";
+		String sql = " SELECT * FROM employee ";
 		SqlRowSet result = jdbcTemplate.queryForRowSet(sql);
 
 		while(result.next()){
