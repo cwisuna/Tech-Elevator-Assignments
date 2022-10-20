@@ -8,7 +8,9 @@ public class LoadMapFromDataFile {
 
     public static Map<SearchKey, String> loadMap() {
         boolean isConsumer = true;
-        String path = "c:/Users/Student/workspace/mod1MapsAndOOPPractice/src/main/java/riveanData.txt";
+        //String path = "c:/Users/Student/workspace/mod1MapsAndOOPPractice/src/main/java/riveanData.txt";
+        //String path = "src/main/java/riveanData.txt";
+        String path = "src/main/resources/riveanData.txt";
         File dataFile = new File(path);
 
         if (!dataFile.exists()) {
