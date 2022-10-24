@@ -55,6 +55,7 @@ public class JdbcProjectDao implements ProjectDao {
 				"VALUES(?, ?, ?) RETURNING project_id";
 
 		Integer newId = jdbcTemplate.queryForObject(sql, Integer.class, newProject.getName(), newProject.getFromDate(), newProject.getToDate());
+
 		return getProject(newId);
 	}
 
