@@ -3,9 +3,14 @@ package com.techelevator.hotels.services;
 import com.techelevator.hotels.model.Hotel;
 import com.techelevator.hotels.model.Reservation;
 import com.techelevator.util.BasicLogger;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.MediaType;
 import org.springframework.web.client.ResourceAccessException;
 import org.springframework.web.client.RestClientResponseException;
 import org.springframework.web.client.RestTemplate;
+
+import java.net.IDN;
 
 
 public class HotelService {
@@ -18,7 +23,27 @@ public class HotelService {
      */
     public Reservation addReservation(Reservation newReservation) {
         // TODO: Implement method
-        return null;
+        //create header
+        HttpHeaders headers = new HttpHeaders();
+        headers.setContentType(MediaType.APPLICATION_JSON);
+        //create entity
+        HttpEntity<Reservation> entity = new HttpEntity<>(newReservation, headers);
+
+        Reservation reservationResult = null;
+
+        try {
+            //reservationResult = restTemplate.postForObject(API_BASE_URL + "hotels/" + newReservation.getHotelId() + "/reservations", entity, Reservation.class);
+            //OR
+            reservationResult = restTemplate.postForObject(API_BASE_URL + "reservations/", entity, Reservation.class);
+
+        } catch (RestClientResponseException e) {
+            BasicLogger.log(e.getRawStatusCode() + " : " + e.getStatusText());
+        } catch (ResourceAccessException e) {
+            BasicLogger.log(e.getMessage());
+        }catch (Exception e){
+            BasicLogger.log(e.getMessage());
+        }
+        return reservationResult;
     }
 
     /**
@@ -27,7 +52,25 @@ public class HotelService {
      */
     public boolean updateReservation(Reservation updatedReservation) {
         // TODO: Implement method
-        return false;
+        //create header
+        HttpHeaders headers = new HttpHeaders();
+        headers.setContentType(MediaType.APPLICATION_JSON);
+        //create entity
+        HttpEntity<Reservation> entity = new HttpEntity<>(updatedReservation, headers);
+
+        boolean success = false;
+
+        try{
+            restTemplate.put(API_BASE_URL + "reservations/" + updatedReservation.getId(), entity);
+            success = true;
+        }catch (RestClientResponseException e) {
+            BasicLogger.log(e.getRawStatusCode() + " : " + e.getStatusText());
+        } catch (ResourceAccessException e) {
+            BasicLogger.log(e.getMessage());
+        }catch (Exception e){
+            BasicLogger.log(e.getMessage());
+        }
+        return success;
     }
 
     /**
@@ -35,7 +78,20 @@ public class HotelService {
      */
     public boolean deleteReservation(int id) {
         // TODO: Implement method
-        return false;
+
+        boolean success = false;
+
+        try{
+            restTemplate.delete(API_BASE_URL + "reservations/" + id);
+        }catch (RestClientResponseException e) {
+            BasicLogger.log(e.getRawStatusCode() + " : " + e.getStatusText());
+        } catch (ResourceAccessException e) {
+            BasicLogger.log(e.getMessage());
+        }catch (Exception e){
+            BasicLogger.log(e.getMessage());
+        }
+        return success;
+
     }
 
     /* DON'T MODIFY ANY METHODS BELOW */
