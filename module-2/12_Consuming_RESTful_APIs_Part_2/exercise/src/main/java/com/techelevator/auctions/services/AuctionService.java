@@ -17,15 +17,17 @@ public class AuctionService {
 
 
     public Auction add(Auction newAuction) {
+
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON);
-        HttpEntity<Auction> entity = new HttpEntity<>(newAuction, headers);
+        //HttpEntity<Auction> entity = new HttpEntity<>(newAuction, headers);
+        // OR use the helper method
+        HttpEntity<Auction> entity = makeEntity(newAuction);
 
         Auction auctionResults = null;
 
         try {
          auctionResults = restTemplate.postForObject(API_BASE_URL, newAuction, Auction.class);
-
         }catch (RestClientResponseException e) {
             BasicLogger.log(e.getRawStatusCode() + " : " + e.getStatusText());
         } catch (ResourceAccessException e) {
@@ -35,6 +37,7 @@ public class AuctionService {
         }
         return auctionResults;
     }
+
 
     public boolean update(Auction updatedAuction) {
         HttpHeaders headers = new HttpHeaders();
