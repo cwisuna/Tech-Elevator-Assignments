@@ -1,0 +1,5 @@
+{
+  "/hotels/:id/reviews": "/reviews?hotelID=:id",
+  "/hotels" : "/hotels?stars=4",
+  "/hotels/stars/:id": "/hotels?stars&lt:id"
+}
