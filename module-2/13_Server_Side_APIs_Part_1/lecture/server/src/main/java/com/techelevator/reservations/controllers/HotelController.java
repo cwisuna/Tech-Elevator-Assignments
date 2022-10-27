@@ -13,7 +13,6 @@ import java.util.List;
 import java.util.Locale;
 
 @RestController
-@RequestMapping("/hotels")
 
 public class HotelController {
 
@@ -41,7 +40,8 @@ public class HotelController {
      * @param id the id of the hotel
      * @return all info for a given hotel
      */
-    @RequestMapping(path = "/{id}", method = RequestMethod.GET)
+
+    @RequestMapping(path = "/hotels/{id}", method = RequestMethod.GET)
     public Hotel get(@PathVariable int id) {
         return hotelDao.get(id);
     }
