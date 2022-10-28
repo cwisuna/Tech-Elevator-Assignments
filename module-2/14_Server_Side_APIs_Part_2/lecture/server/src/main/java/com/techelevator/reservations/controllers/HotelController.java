@@ -65,6 +65,7 @@ public class HotelController {
      * @param id
      * @return a single reservation
      */
+
     @RequestMapping(path = "reservations/{id}", method = RequestMethod.GET)
     public Reservation getReservation(@PathVariable int id) {
         Reservation reservation = reservationDao.get(id);

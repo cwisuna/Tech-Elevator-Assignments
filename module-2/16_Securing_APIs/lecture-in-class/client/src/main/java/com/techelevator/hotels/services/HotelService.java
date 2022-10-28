@@ -27,11 +27,7 @@ public class HotelService {
 
         //TODO: Add implementation
         try{
-            returnedReservation = restTemplate.postForObject(
-                                                                API_BASE_URL + "reservations",
-                                                                makeReservationEntity(newReservation),
-                                                                Reservation.class
-                                                            );
+            returnedReservation = restTemplate.postForObject(API_BASE_URL + "reservations", makeReservationEntity(newReservation), Reservation.class);
 
         } catch (RestClientResponseException | ResourceAccessException e) {
             BasicLogger.log(e.getMessage());

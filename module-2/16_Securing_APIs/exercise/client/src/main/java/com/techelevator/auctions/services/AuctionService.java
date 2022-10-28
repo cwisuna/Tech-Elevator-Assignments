@@ -2,6 +2,7 @@ package com.techelevator.auctions.services;
 
 import com.techelevator.auctions.model.Auction;
 import com.techelevator.util.BasicLogger;
+import jdk.jfr.Frequency;
 import org.springframework.http.*;
 import org.springframework.web.client.ResourceAccessException;
 import org.springframework.web.client.RestClientResponseException;
@@ -30,15 +31,26 @@ public class AuctionService {
         return auctions;
     }
 
+
+
     public Auction getAuction(int id) {
+        
         Auction auction = null;
         try {
             // Add code here to send the request to the API and get the auction from the response.
+
+            ResponseEntity<Auction> response =
+                    restTemplate.exchange(API_BASE_URL + id, HttpMethod.GET,
+                            makeAuthEntity() , Auction.class);
+            auction = response.getBody();
+
         } catch (RestClientResponseException | ResourceAccessException e) {
             BasicLogger.log(e.getMessage());
         }
         return auction;
     }
+
+
 
     public Auction[] getAuctionsMatchingTitle(String title) {
         Auction[] auctions = null;
@@ -47,6 +59,7 @@ public class AuctionService {
                     restTemplate.exchange(API_BASE_URL + "?title_like=" + title, HttpMethod.GET,
                             makeAuthEntity(), Auction[].class);
             auctions = response.getBody();
+
         } catch (RestClientResponseException | ResourceAccessException e) {
             BasicLogger.log(e.getMessage());
         }
