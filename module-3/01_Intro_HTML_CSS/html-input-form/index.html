@@ -1,0 +1,208 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="style.css">
+    <title>Form Input Elements</title>
+</head>
+
+<body>
+    <h1>Form Input Elements</h1>
+    <div id="headerInfo"><a href="anchorexamples.html"><span>Learn about and build anchor tags</span></a></div>
+    <form id="inputForm" action="">
+        <div id="container">
+            <div id="column1">
+                <div class="input-container">
+                    <label for="input-text">Text</label>
+                    <input type="text" class="textField" name="" id="input-text">
+                </div>
+                <div class="input-container">
+                    <label></label>
+                    <label for="input-text">&lt;input type=<span class="input-type">"text"</span> class="textField"
+                        id="input-text" /></label>
+                </div>
+                <div class="input-container">
+                    <label for="input-password">Password</label>
+                    <input type="password" class="textField" name="" id="input-password">
+                </div>
+                <div class="input-container">
+                    <label></label>
+                    <label for="input-text">&lt;input type=<span class="input-type">"password"</span> class="textField"
+                        id="input-password" /></label>
+                </div>
+                <div class="input-container input-container-radio"><label for="input-radio">radio</label>
+                    <input onchange='changeRadioColor(this)' type="radio" name="input-radio" id="input-radio-red"
+                        value="red"><label class="label-radio">Red</label>
+                    <input onchange='changeRadioColor(this)' type="radio" name="input-radio" id="input-radio-yellow"
+                        value="yellow"><label class="label-radio">Yellow</label>
+                    <input onchange='changeRadioColor(this)' type="radio" name="input-radio" id="input-radio-green"
+                        value="green"><label class="label-radio">Green</label>
+                    <input onchange='changeRadioColor(this)' type="radio" name="input-radio" id="input-radio-none"
+                        value="transparent"><label class="label-radio">None</label>
+                </div>
+                <div id="input-radio-output">
+                    <div id="input-radio-result">
+                    </div>
+
+                </div>
+                <div class="input-container input-container-radio"><label for="input-checkbox">checkbox</label>
+                    <input type="checkbox" name="input-checkbox" id="input-checkbox5" value=5><label>5</label>
+                    <input type="checkbox" name="input-checkbox" id="input-checkbox10" value=10><label>10</label>
+                    <input type="checkbox" name="input-checkbox" id="input-checkbox30" value=30><label>30</label>
+                </div>
+                <div id="input-checkbox-output">
+                    <input type="text" id='input-checkbox-result' value='0'></input>
+
+                </div>
+                <div class="input-container"><label for="input-button">button</label>
+                    <input type="button" value="Button" class="textField" id="input-button"></div>
+
+                <div class="input-container"><label for="input-email">email</label>
+                    <input type="email" class="textField" name="" id="input-email" pattern="[^ @]*@[^ @]*"
+                        placeholder="Enter your email">
+                </div>
+
+                <div class="input-container"><label for="input-file">file</label>
+                    <input type="file" name="" id="input-file"></div>
+
+                <div class="input-container"><label for="input-hidden">hidden</label>
+                    <input type="hidden" class="textField" name="" id="input-hidden"></div>
+
+                <div class="input-container"><label for="input-number">number</label>
+                    <input type="number" class="textField" name="" id="input-number" min="0" step="5" max="100"></div>
+
+                <div class="input-container">
+                    <label for="input-range">range</label>
+                    <input type="range" class="textField" name="" id="input-range" min="0" max="100"
+                        onchange="updateTextInput(this.value)">
+                </div>
+                <div id="input-range-result">
+                    <input type="text" id='range-output' value='50'></input>
+                </div>
+            </div>
+            <div id="column2">
+                <div class="input-container"><label for="input-search">search</label>
+                    <input type="search" class="textField" name="" id="input-search"></div>
+
+                <div class="input-container"><label for="input-telephone">telephone</label>
+                    <input type="tel" class="textField" name="phone" id="input-telephone"
+                        pattern="[0-9]([0-9]{3} [0-9]{3}-[0-9]{4}" placeholder="ex. 1(111)-111-1111" require></div>
+
+                <div class="input-container"><label for="input-time">time</label>
+                    <input type="time" class="textField" name="" id="input-time" min="09:00" step="900"></div>
+
+                <div class="input-container"><label for="input-date">date</label>
+                    <input type="date" class="textField" name="" id="input-date" min="2019-12-25" step="1"></div>
+
+                <div class="input-container"><label for="input-datetime-local">datetime-local</label>
+                    <input type="datetime-local" class="textField" name="" id="input-datetime-local"
+                        min="2019-12-25T19:30"></div>
+
+                <div class="input-container"><label for="input-week">week</label>
+                    <input type="week" class="textField" name="" id="input-week" min="2019-W23" step=""></div>
+
+                <div class="input-container"><label for="input-month">month</label>
+                    <input type="month" class="textField" name="" id="input-month" min="2019-12" step="12">
+                </div>
+
+                <div class="input-container"><label for="input-url">url</label>
+                    <input type="url" class="textField" name="" id="input-url" placeholder="https://example.com"
+                        pattern="https://.*" size="30">
+                </div>
+
+                <div class="input-container"><label for="input-submit">submit</label>
+                    <input type="submit" value="submit" class="textField" id="input-submit"></div>
+
+                <div class="input-container"><label for="input-reset">reset</label>
+                    <input type="reset" value="reset" class="textField" id="input-reset"></div>
+
+                <div class="input-container"><label for="input-color">color</label>
+                    <input type="color" class="textField" name="" id="input-color" value="#FFFFFF">
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <script>
+
+        function formatPhoneNumber() {
+            const telephone = document.getElementById('input-telephone');
+            var cleaned = ('' + telephone.value).replace(/\D/g, '');
+            let r0 = cleaned.substring(0, 1);
+            let r1 = cleaned.substring(1, 4);
+            let r2 = cleaned.substring(4, 7);
+            let r3 = cleaned.substring(7, 11);
+            let result = r0 + ' (' + r1 + ') ' + r2 + '-' + r3;
+            telephone.value = result;
+        }
+
+        function buttonOnClick() {
+            alert("input-button clicked");
+        }
+
+        function updateTextInput(val) {
+            document.getElementById('range-output').value = val;
+        }
+
+
+        function validateEmail() {
+            let email = document.getElementById('input-email').value;
+            if (!String(email)
+                .toLowerCase()
+                .match(
+                    /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+                )) {
+                alert("Please enter a valid email address");
+            };
+        };
+
+        function changeRadioColor(radio) {
+            document.getElementById('input-radio-result').style.backgroundColor = radio.attributes.value.nodeValue;
+        }
+        function checkboxClicked() {
+            let total = 0;
+            let checkboxArray = document.getElementsByName('input-checkbox');
+            for (i = 0; i < checkboxArray.length; i++) {
+                if (checkboxArray[i].checked) {
+                    total += parseInt(checkboxArray[i].value);
+                }
+            };
+
+            document.getElementById('input-checkbox-result').value = total;
+        }
+        function changeBgColor() {
+            let bgColor = document.getElementById('input-color').value;
+            document.body.style.backgroundColor = bgColor;
+        }
+
+        function validateForm(event) {
+            event.preventDefault();
+            console.log(event);
+        }
+        document.getElementById('input-checkbox5').addEventListener('click', checkboxClicked);
+        document.getElementById('input-checkbox10').addEventListener('click', checkboxClicked);
+        document.getElementById('input-checkbox30').addEventListener('click', checkboxClicked);
+        document.getElementById('input-email').addEventListener('blur', validateEmail);
+        document.getElementById('input-telephone').addEventListener('blur', formatPhoneNumber);
+        document.getElementById('input-color').addEventListener('blur', changeBgColor);
+        document.getElementById('input-button').addEventListener('click', buttonOnClick);
+        document.getElementById('inputForm').addEventListener('submit', validateForm);
+
+
+        function handleSubmit(event) {
+                event.preventDefault();
+
+                const data = new FormData(event.target);
+
+                const value = Object.fromEntries(data.entries());
+            
+               value.topics = data.getAll("input-checkbox");
+
+                console.log({ value });
+            }
+
+  const form = document.querySelector("form");
+  form.addEventListener("submit", handleSubmit);
+    </script>
+</body>
+
+</html>
