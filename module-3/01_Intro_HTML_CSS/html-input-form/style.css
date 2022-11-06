@@ -1,0 +1,109 @@
+input:invalid {
+    border: solid red 3px;
+  }
+
+h1 {
+    text-align:center;
+    margin: 1em 0 2em 0 ;
+}
+div {
+    width: auto;
+}
+a>span{
+ text-emphasis: bold;
+ font-size: 32px;
+}
+#container {
+    display: flex;
+    justify-content: space-between;
+}
+
+#column1,
+#column2 {
+    border: 1px solid red; 
+    padding: 3em;
+    width: 50%;
+}
+
+#headerInfo {
+    display:flex;
+    justify-content: end;
+}
+
+.input-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.input-container-radio{
+    justify-content: start;
+}
+.input-type{
+    font-weight: bold;
+    font-size: 110%
+}
+label {
+    margin: 8px;
+    padding: 8px;
+}
+
+input {
+    height: 30px;
+}
+
+.textField {
+    width: 50%;
+}
+
+#input-range{
+    display: block;
+}
+#range-output{
+    border: 1px solid black;
+    width: 3em;
+    text-align: center;
+}
+
+#input-range-result {
+    display:flex;
+    justify-content: center;
+}
+
+#input-radio{
+    margin-top: 8px;
+}
+
+
+.label-radio{
+    margin-left:0;
+    padding-left: 2px;
+}
+.label-radio-output {
+    background: white;
+}
+#input-radio-output {
+    display:flex;
+    justify-content: end;
+}
+#input-radio-result{
+    width: 150px;
+    height: 20px;
+    border: 1px solid black;
+    justify-content: end;
+}
+
+ #input-checkbox-output {
+    display:flex;
+    justify-content: end;
+    height: 40px;
+   
+} 
+#input-checkbox-result{
+    width: 5em;
+    height: 20px;
+    border: 1px solid black;
+    justify-content: center;
+    text-align: right;
+}
