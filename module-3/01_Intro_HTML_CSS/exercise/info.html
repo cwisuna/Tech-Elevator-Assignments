@@ -4,8 +4,43 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Info</title>
+    <link rel="stylesheet" href="style2.css">
 </head>
 <body>
-    
+    <header>
+        <h1>Pups, pups, and more pups!</h1>
+        <h3>Submit your info below!</h3>
+        </header>
+        
+    <form method="POST" action="https://example.com/api/pupspupspups">
+    <div>
+        <label for="name">Name:</label>
+        <input type="text" name="name" id="name" required>
+    </div>
+     <div><label for="email">Email:</label>
+        <input type="email" name="email" id="email" required>
+    </div> 
+    <div>
+        <label for="date-of-birth">Date of Birth:</label>
+        <input type="date" name="date-of-birth" id="date-of-birth">
+    </div>
+    <div>
+        <label for="favorite-color">Color:</label>
+        <input type="color" name="favorite-color" id="favorite-color">
+    </div>
+    <div>
+        <label for="lucky-number">Favorite number:</label>
+        <input type="number" name="lucky-number" id="lucky-number">
+    </div>
+    <div>
+        <label for="confirmation">Confirm data is correct:</label>
+        <input type="checkbox" name="confirmation" id="confirmation">
+    </div>
+    <div>
+        <label for=""></label>
+        <input type="submit" name="submit" id="submit">
+    </div>
+    </form>
 </body>
 </html>

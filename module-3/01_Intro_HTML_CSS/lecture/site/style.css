@@ -1,0 +1,28 @@
+body{
+    font-family: Arial, Helvetica, sans-serif ;
+    font-size: 16px;
+}
+h1{
+    font-size: 48px;
+}
+img{
+    height: 200px;
+}
+section{
+    border-radius: 10px;
+}
+#lunch{
+    border-style: solid;
+    border-color: red;
+    border-width: 5px;
+}
+#dinner{
+    /* one line instead of three seperate lines like above */
+    border: 1px solid blue;
+}
+.dinner{
+    background-color: cornflowerblue;
+}
+p{
+    color: black;
+}

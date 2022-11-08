@@ -34,16 +34,6 @@ public class AuctionController {
         return dao.create(auction);
     }
 
-    /*@RequestMapping (method = RequestMethod.GET)
-    public List<Auction> list(@RequestParam (name = "title_like", defaultValue = "") String title ){
-
-        if(!title.equals("")){
-            return dao.searchByTitle(title);
-        }
-        return dao.list();
-    }
-
-     */
 
     @RequestMapping (method = RequestMethod.GET)
     public List<Auction> list(@RequestParam (name = "title_like", defaultValue = "") String title

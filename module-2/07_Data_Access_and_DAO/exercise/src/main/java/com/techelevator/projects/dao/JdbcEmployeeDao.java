@@ -35,6 +35,7 @@ public class JdbcEmployeeDao implements EmployeeDao {
 
 	@Override
 	public List<Employee> searchEmployeesByName(String firstNameSearch, String lastNameSearch) {
+		
 		List<Employee> employeeList = new ArrayList<>();
 
 		String sql = "SELECT employee_id, department_id, first_name, last_name, birth_date, hire_date " +
