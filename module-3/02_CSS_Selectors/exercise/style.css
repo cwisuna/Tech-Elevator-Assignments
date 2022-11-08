@@ -15,3 +15,91 @@ ul {
   margin: 0;
   padding: 0;
 }
+aside{
+  position: fixed;
+  border-right-style: solid;
+  border-right-color: rgba(0, 173, 238, 0.4);
+  border-right-width: 1px;
+  width: 200px;
+  height: 100%;
+}
+aside img{
+  height: 120px;
+  margin-left: 40px;
+}
+main{
+  margin-left: 200px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+aside li{
+  text-align: center;
+  text-transform: uppercase;
+  border-bottom: rgba(0, 173, 238, 0.4) solid 1px;
+  margin-right: 1px;
+  list-style-type: none;
+  padding-top: 10px;
+  padding-bottom: 10px;
+
+}
+aside li a{
+  font-weight: bold;
+  color: #00ADEE;
+  text-decoration-line: none;
+}
+li:first-child{
+  text-decoration-line: underline;
+}
+header img{
+  height: 100px;
+  padding-bottom: 10px;
+}
+.banner{
+  width: 100%;
+  display: inline-block;
+}
+div#what-we-do{
+  width: 33%;
+  display: inline-block;
+  margin-left: 2px;
+  padding-left: 2px;
+  padding-right: 2px;
+  padding-top: 2px;
+  margin-top: 2px;
+}
+div#our-work{
+  width: 33%;
+  display: inline-block;
+  margin-left: 2px;
+  padding-left: 2px;
+  padding-right: 2px;
+  padding-top: 2px;
+  margin-top: 2px;
+}
+div#contact-us{
+  width: 33%;
+  display: inline-block;
+  margin-left: 2px;
+  padding-left: 2px;
+  padding-right: 2px;
+  padding-top: 2px;
+  margin-top: 2px;
+}
+section h2{
+  color: #8CC36F;
+}
+section div h2 i{
+  padding-right: 10px;
+  margin-right: 10px;
+}
+section div#our-work{
+  border-left-color: rgba(170, 239, 135, 0.8);
+  border-left-style: solid;
+  border-left-width: 1px;
+
+}
+section div#contact-us{
+  border-left-color: rgba(170, 239, 135, 0.8);
+  border-left-style: solid;
+  border-left-width: 1px;
+}
