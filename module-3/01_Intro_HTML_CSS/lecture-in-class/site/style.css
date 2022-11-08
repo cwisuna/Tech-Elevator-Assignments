@@ -1,0 +1,36 @@
+body{
+    /* font-family: Arial, Helvetica, sans-serif; */
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1em;
+}
+
+h1{
+    font-size: 48px;
+}
+img {
+    height: 200px;
+}
+
+section {
+    border-radius: 10px;
+}
+
+p {
+    color: cornflowerblue;
+}
+#lunch {
+    border-style: solid;
+    border-color: red;
+    border-width: 5px;
+   
+}
+#dinner{
+    border: 1px solid green;
+   
+}
+
+#dinner > p {
+    background-color: lightyellow;
+  
+}
