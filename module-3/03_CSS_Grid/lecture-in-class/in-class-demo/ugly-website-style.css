@@ -1,0 +1,55 @@
+/* CSS Grid Layout */
+
+header {
+    grid-area: header;
+}
+
+main {
+    grid-area: main;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+        "header"
+        "main";
+    height: 100vh;
+    gap: 10px;
+
+}
+
+
+
+/* CSS */
+
+
+header, main {
+    border: 1px solid black;
+}
+
+header {
+    text-align: center;
+}
+
+ol {
+    list-style-type: disc
+}
+
+th {
+    text-align: start;
+}
+td {
+    margin: 25px;
+}
+
+.contestantName {
+ padding: 2px;
+
+    border: 1px solid black;
+}
+
+.webpageName {
+    padding: 2px;
+    border: 1px solid black;
+}
