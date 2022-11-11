@@ -1,0 +1,17 @@
+.container {
+
+    display: flex;
+    border: 3px solid black; 
+}
+.child{ 
+   width: 50vw;
+}
+.green{
+
+    border: 1px solid green; 
+ 
+}
+.blue{
+    border: 1px solid blue; 
+    
+}

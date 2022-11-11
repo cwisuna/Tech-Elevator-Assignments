@@ -1,0 +1,67 @@
+header {
+    grid-area: header;
+}
+main {
+    grid-area: main;
+}
+aside {
+    grid-area: ads;
+}
+nav{
+    grid-area: nav;
+}
+footer {
+    grid-area: footer;
+}
+
+
+.container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas:
+    "header header header"
+    "nav nav nav"
+    ". main ads"
+    "footer footer footer"
+    ;
+}
+
+
+
+
+/* CSS  formatting */
+header {
+   background-color: lightgray;
+}
+main {
+    background-color: lightblue;
+}
+aside {
+    background-color: lightyellow;
+}
+nav{
+    display: flex;
+    justify-content: space-between;
+    background-color: lightcoral;
+}
+footer {
+    background-color: lightgoldenrodyellow;
+}
+
+#nav-menu {
+    display:flex;
+    list-style-type: none;
+
+}
+
+#nav-menu li {
+    margin: 0 4px;
+    padding: 0 4px;
+}
+
+
+
+
+
+
+
