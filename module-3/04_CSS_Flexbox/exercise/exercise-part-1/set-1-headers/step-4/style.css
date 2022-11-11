@@ -6,6 +6,7 @@ body {
 header {
   background-color: #F0F0F0;
   padding: 20px;
+  display: flex;
 }
 
 .logo {
@@ -37,4 +38,11 @@ a:hover {
   color: #00AFEF;
   text-decoration: underline;
 }
-
+header > nav > ul{
+  display: flex;
+  justify-content: flex-end;
+}
+header > nav{
+  flex-grow: 3;
+}
+div.spacer 

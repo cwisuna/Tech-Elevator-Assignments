@@ -1,4 +1,35 @@
- 
+body, #hero footer, 
+#featured section,
+ #featured section article, 
+ #featured section article div, 
+ #all-items section{
+  display: flex;
+}
+
+body{
+  flex-direction: column;
+  text-align: center;
+}
+#all-items section{
+  flex-direction: column;
+}
+#hero footer{
+  justify-content: space-between;
+}
+#featured section article, #featured section article div{
+  justify-content: center;
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 /***** enter flexbox CSS above this line *****/
