@@ -1,0 +1,55 @@
+
+.flex-container {
+    display: flex;
+    /* flex-direction: row;
+    flex-wrap: nowrap;
+
+    height: auto;
+    width: auto;
+    */
+}
+.box {
+    min-width: 50px;
+    min-height: 50px;
+    color: black;
+    background-color: white;
+    border: 2px solid black;
+
+    margin: 5px;
+    padding: 5px;
+
+    text-align: center;
+    line-height: 45px;
+    flex-grow: 1;
+}
+
+
+.divRed {
+   background-color: red; 
+}
+.divOrange{
+    background-color: orange; 
+ }
+.divYellow{
+    background-color: yellow;
+ }
+.divGreen{
+    background-color: green; 
+    color: white;
+    flex-grow: 2;
+ }
+.divBlue{
+    background-color: blue; 
+    color: white;
+
+ }
+.divIndigo{
+    background-color: indigo; 
+    color: white;
+ }
+.divViolet{
+    background-color: violet; 
+ }
+
+
+
