@@ -55,16 +55,18 @@ function displayReviews() {
   if ('content' in document.createElement('template')) {
     const main = document.getElementById('main');
     reviews.forEach((review) => {
-      const tmpl = document.getElementById('review-template').content.cloneNode(true);
-      tmpl.querySelector('h2').innerText = review.reviewer;
-      tmpl.querySelector('h3').innerText = review.title;
-      tmpl.querySelector('p').innerText = review.review;
+      const temp = document.getElementById('review-template').content.cloneNode(true);
+      temp.querySelector('h2').innerText = review.reviewer;
+      temp.querySelector('h3').innerText = review.title;
+      temp.querySelector('p').innerText = review.review;
+
       // there will always be 1 star because it is a part of the template
-      for (let i = 1; i < review.rating; ++i) {
-        const img = tmpl.querySelector('img').cloneNode();
-        tmpl.querySelector('.rating').appendChild(img);
+     
+      for (let i = 1; i < review.rating; i++) {
+        const img = temp.querySelector('img').cloneNode(true);
+        temp.querySelector('.rating').appendChild(img);
       }
-      main.appendChild(tmpl);
+      main.appendChild(temp);
     });
   } else {
     console.error('Your browser does not support templates');
