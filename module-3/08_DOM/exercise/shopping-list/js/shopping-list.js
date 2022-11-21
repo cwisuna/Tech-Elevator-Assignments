@@ -19,10 +19,11 @@ function displayGroceries() {
 
 const ul = document.getElementById('groceries');
 groceries.forEach(element => {
-  const temp = document.createElement('li');
-  temp.innerText = element;
-  ul.appendChild(temp);
+  const listItem = document.createElement('li');
+  listItem.innerText = element;
+  ul.appendChild(listItem);
 });
+
 }
 
 /**
@@ -30,12 +31,12 @@ groceries.forEach(element => {
  * to every list item and add the class completed to each one
  */
 function markCompleted() {
- const list = document.getElementById('groceries');
- const items = Array.from(list.children)
+  const listOfGroceries = document.querySelectorAll('#groceries > li');
 
- items.forEach((element) => {
-   element.setAttribute('class', 'completed');
- })
+  listOfGroceries.forEach((element) => {
+    element.classList.add('completed')
+    //element.setAttribute('class', 'completed');
+  })
 
 }
 

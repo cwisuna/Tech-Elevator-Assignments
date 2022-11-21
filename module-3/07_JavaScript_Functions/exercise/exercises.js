@@ -121,9 +121,9 @@ let unfilteredArray = [1, 2, 3, 4, 5, 6];
 
     function getFullAddressesOfProperties(array) {
 
-        let newArray;
+       // let newArray;
 
-        newArray = array.map((element) =>{
+        let newArray = array.map((element) =>{
 
             //return element.streetNumber + " " + element.streetName + " " + element.streetType + " " + element.city + " " + element.state + " " + element.zip;
             return (`${element.streetNumber} ${element.streetName} ${element.streetType} ${element.city} ${element.state} ${element.zip}`)
@@ -159,8 +159,8 @@ let unfilteredArray = [1, 2, 3, 4, 5, 6];
                 largestElement = element;
             }
         });
-        return largestElement;
         
+        return largestElement;
     }
 
 /*

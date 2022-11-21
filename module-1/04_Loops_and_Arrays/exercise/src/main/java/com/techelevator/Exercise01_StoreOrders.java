@@ -115,4 +115,6 @@ public class Exercise01_StoreOrders {
         return smallCheese * 8 + mediumCheese * 11 + largeCheese * 14;
 
     }
+
+
 }
