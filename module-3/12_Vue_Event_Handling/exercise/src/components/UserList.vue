@@ -15,7 +15,6 @@
       <tbody>
         <tr>
           <td>
-            <input type="checkbox" id="selectAll" />
           </td>
           <td>
             <input type="text" id="firstNameFilter" v-model="filter.firstName" />
@@ -44,7 +43,7 @@
           v-bind:class="{ disabled: user.status === 'Disabled' }"
         >
           <td>
-            <input type="checkbox" v-bind:id="user.id" v-bind:value="user.id" />
+            <input type="checkbox" v-bind:id="user.id" v-bind:value="user.id" v-model="selectedUserIDs" name="selectedUserIDs" />
           </td>
           <td>{{ user.firstName }}</td>
           <td>{{ user.lastName }}</td>
@@ -52,47 +51,46 @@
           <td>{{ user.emailAddress }}</td>
           <td>{{ user.status }}</td>
           <td>
-            <button class="btnEnableDisable">Enable or Disable</button>
+            <button class="btnEnableDisable" v-on:click="flipStatus(user.id)">Enable or Disable</button>
           </td>
         </tr>
       </tbody>
     </table>
-
     <div class="all-actions">
-      <button>Enable Users</button>
-      <button>Disable Users</button>
-      <button>Delete Users</button>
+      <button v-bind:disabled ="actionButtonDisabled">Enable Users</button>
+      <button v-bind:disabled ="actionButtonDisabled">Disable Users</button>
+      <button v-bind:disabled ="actionButtonDisabled">Delete Users</button>
     </div>
-
-    <button>Add New User</button>
-
-    <form id="frmAddNewUser">
+    <!---->
+    <button href="#" v-on:click="showForm = !showForm">Add New User</button>
+    <form id="frmAddNewUser" v-show="showForm" v-on:submit.prevent="saveUser">
       <div class="field">
         <label for="firstName">First Name:</label>
-        <input type="text" name="firstName" />
+        <input type="text" name="firstName" v-model="newUser.firstName"/>
       </div>
       <div class="field">
         <label for="lastName">Last Name:</label>
-        <input type="text" name="lastName" />
+        <input type="text" name="lastName" v-model="newUser.lastName" />
       </div>
       <div class="field">
         <label for="username">Username:</label>
-        <input type="text" name="username" />
+        <input type="text" name="username" v-model="newUser.username" />
       </div>
       <div class="field">
         <label for="emailAddress">Email Address:</label>
-        <input type="text" name="emailAddress" />
+        <input type="text" name="emailAddress" v-model="newUser.emailAddress"/>
       </div>
       <button type="submit" class="btn save">Save User</button>
     </form>
   </div>
 </template>
-
 <script>
 export default {
   name: "user-list",
   data() {
     return {
+      showForm: false,
+      selectedUserIDs: [],
       filter: {
         firstName: "",
         lastName: "",
@@ -164,7 +162,35 @@ export default {
   methods: {
     getNextUserId() {
       return this.nextUserId++;
-    }
+    },
+    selectAll(event){
+      this.selectedUserIDs = [];
+      if (event.target.checked){
+        this.users.ForEach( (user) => this.selectedUserIDS.push(user.id));
+      }
+    },
+    saveUser() {
+      this.newUser.id = this.getNextUserId();
+      this.users.unshift(this.newUser);
+      this.clearForm();
+    },
+    clearForm() {
+      this.newUser = {
+        status: "Active"
+      };
+      this.showForm = false;
+    },
+    flipStatus(id) {
+      this.users.forEach(element => {
+         if(element.id == id) {
+            if (element.status == "Active"){
+                element.status = "Disabled";
+            } else if (element.status == "Disabled"){
+                element.status = "Active";
+            }
+          }
+      })
+    },
   },
   computed: {
     filteredList() {
@@ -203,11 +229,17 @@ export default {
         );
       }
       return filteredUsers;
+    },
+    actionButtonDisabled() {
+    if(this.selectedUserIDs.length === 0){
+          return true;
+      } else {
+          return false;
+      }
     }
-  }
+  },
 };
 </script>
-
 <style scoped>
 table {
   margin-top: 20px;
@@ -228,7 +260,6 @@ input,
 select {
   font-size: 16px;
 }
-
 form {
   margin: 20px;
   width: 350px;

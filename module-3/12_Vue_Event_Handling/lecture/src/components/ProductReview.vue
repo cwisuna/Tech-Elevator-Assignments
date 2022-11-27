@@ -6,41 +6,77 @@
 
     <div class="well-display">
       <div class="well">
-        <span class="amount">{{ averageRating }}</span>
+        <span class="amount" v-on:click="filter = 0">{{ averageRating }}</span>
         Average Rating
       </div>
 
       <div class="well">
-        <span class="amount">{{ numberOfOneStarReviews }}</span>
+        <span class="amount" v-on:click="filter = 1">{{ numberOfOneStarReviews }}</span>
         1 Star Review{{ numberOfOneStarReviews === 1 ? '' : 's' }}
       </div>
 
       <div class="well">
-        <span class="amount">{{ numberOfTwoStarReviews }}</span>
+        <span class="amount" v-on:click="filter = 2">{{ numberOfTwoStarReviews }}</span>
         2 Star Review{{ numberOfTwoStarReviews === 1 ? '' : 's' }}
       </div>
 
       <div class="well">
-        <span class="amount">{{ numberOfThreeStarReviews }}</span>
+        <span class="amount" v-on:click="filter = 3">{{ numberOfThreeStarReviews }}</span>
         3 Star Review{{ numberOfThreeStarReviews === 1 ? '' : 's' }}
       </div>
 
       <div class="well">
-        <span class="amount">{{ numberOfFourStarReviews }}</span>
+        <span class="amount" v-on:click="filter = 4">{{ numberOfFourStarReviews }}</span>
         4 Star Review{{ numberOfFourStarReviews === 1 ? '' : 's' }}
       </div>
 
       <div class="well">
-        <span class="amount">{{ numberOfFiveStarReviews }}</span>
+        <span class="amount" v-on:click="filter = 5">{{ numberOfFiveStarReviews }}</span>
         5 Star Review{{ numberOfFiveStarReviews === 1 ? '' : 's' }}
       </div>
     </div>
 
+    <a href="#" v-on:click.prevent="showForm = true" v-if="showForm ===false">Show Form</a>
+    <!-- above is using inline OR I can call a method below
+      <a href="#" v-on:click.prevent="setShowForm(true)" v-show="!showForm">Show Form</a>
+    -->
+
+    <form v-on:submit.prevent="addNewReview" v-show="showForm">
+      <div class="form-element">
+        <label for="reviewer">Name:</label>
+        <input type="text" v-model="newReview.reviewer" id="reviewer" />
+      </div>
+      <div class="form-element">
+        <label for="title">Title:</label>
+        <input type="text" v-model="newReview.title" id="title" />
+      </div>
+      <div class="form-element">
+        <label for="review">Review:</label>
+        <input type="text" v-model="newReview.review" id="review" />
+      </div>
+      <div class="form-element">
+        <label for="rating">Rating:</label>
+        <select id="rating" v-model.number="newReview.rating">
+          <option value="1">1 Star</option>
+          <option value="2">2 Stars</option>
+          <option value="3">3 Stars</option>
+          <option value="4">4 Stars</option>
+          <option value="5">5 Stars</option>
+        </select>
+      </div>
+      <div class="form-element">
+        <label for="favorited">Favorited:</label>
+        <input type="checkbox" v-model="newReview.favorited" id="favorited" />
+      </div>
+      <input type="submit" value="Save" />
+      <input type="button" value="Cancel" v-on:click="resetForm" />
+    </form>
+
     <div
       class="review"
       v-bind:class="{ favorited: review.favorited }"
-      v-for="review in reviews"
-      v-bind:key="review.id"
+      v-for="review in filteredReviews"
+      v-bind:key="review.title"
     >
       <h4>{{ review.reviewer }}</h4>
       <div class="rating">
@@ -73,6 +109,8 @@ export default {
       description:
         "Host and plan the perfect cigar party for all of your squirrelly friends.",
       newReview: {},
+      showForm: false,
+      filter: 0,
       reviews: [
         {
           reviewer: "Malcolm Gladwell",
@@ -117,28 +155,41 @@ export default {
       return (sum / this.reviews.length).toFixed(2);
     },
     numberOfOneStarReviews() {
-      return this.reviews.reduce((currentCount, review) => {
-        return currentCount + (review.rating === 1);
-      }, 0);
+      return this.numberOfReviews(1);
     },
     numberOfTwoStarReviews() {
-      return this.reviews.reduce((currentCount, review) => {
-        return currentCount + (review.rating === 2);
-      }, 0);
+      return this.numberOfReviews(2);
     },
     numberOfThreeStarReviews() {
-      return this.reviews.reduce((currentCount, review) => {
-        return currentCount + (review.rating === 3);
-      }, 0);
+      return this.numberOfReviews(3);
     },
     numberOfFourStarReviews() {
-      return this.reviews.reduce((currentCount, review) => {
-        return currentCount + (review.rating === 4);
-      }, 0);
+      return this.numberOfReviews(4);
     },
     numberOfFiveStarReviews() {
+      return this.numberOfReviews(5);
+    },
+    filteredReviews() {
+      return this.reviews.filter(review => {
+        return this.filter === 0 ? true : this.filter === review.rating;
+      });
+    }
+  },
+  methods: {
+    addNewReview() {
+      this.reviews.unshift(this.newReview);
+      this.resetForm();
+    },
+    resetForm() {
+      this.newReview = {};
+      this.showForm = false;
+    },
+    setShowForm(value) {
+      this.showForm = value;
+    },
+    numberOfReviews(numOfStars) {
       return this.reviews.reduce((currentCount, review) => {
-        return currentCount + (review.rating === 5);
+        return currentCount + (review.rating === numOfStars);
       }, 0);
     }
   }
@@ -149,12 +200,10 @@ export default {
 div.main {
   margin: 1rem 0;
 }
-
 div.main div.well-display {
   display: flex;
   justify-content: space-around;
 }
-
 div.main div.well-display div.well {
   display: inline-block;
   width: 15%;
@@ -163,54 +212,46 @@ div.main div.well-display div.well {
   text-align: center;
   margin: 0.25rem;
 }
-
 div.main div.well-display div.well span.amount {
   color: darkslategray;
   display: block;
   font-size: 2.5rem;
 }
-
 div.main div.review {
   border: 1px black solid;
   border-radius: 6px;
   padding: 1rem;
   margin: 10px;
 }
-
 div.main div.review.favorited {
   background-color: lightyellow;
 }
-
 div.main div.review div.rating {
   height: 2rem;
   display: inline-block;
   vertical-align: top;
   margin: 0 0.5rem;
 }
-
 div.main div.review div.rating img {
   height: 100%;
 }
-
 div.main div.review p {
   margin: 20px;
 }
-
 div.main div.review h3 {
   display: inline-block;
 }
-
 div.main div.review h4 {
   font-size: 1rem;
 }
-
 div.form-element {
   margin-top: 10px;
 }
 div.form-element > label {
   display: block;
 }
-div.form-element > input, div.form-element > select {
+div.form-element > input,
+div.form-element > select {
   height: 30px;
   width: 300px;
 }
@@ -218,12 +259,12 @@ div.form-element > textarea {
   height: 60px;
   width: 300px;
 }
-form > input[type=button] {
+form > input[type="button"] {
   width: 100px;
 }
-form > input[type=submit] {
+form > input[type="submit"] {
   width: 100px;
   margin-right: 10px;
 }
-</style>
 
+</style>

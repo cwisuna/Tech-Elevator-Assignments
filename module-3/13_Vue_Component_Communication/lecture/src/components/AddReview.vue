@@ -49,6 +49,8 @@ export default {
   },
   methods: {
     addNewReview() {
+      this.$store.commit('ADD_REVIEW', this.newReview);
+      this.$store.commit('UPDATE_FILTER', 0);
       this.resetForm();
     },
     resetForm() {
