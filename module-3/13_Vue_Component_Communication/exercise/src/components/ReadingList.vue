@@ -6,6 +6,7 @@
 </template>
 
 <script>
+  //step one
 import BookCard from './BookCard.vue'
 
 export default {

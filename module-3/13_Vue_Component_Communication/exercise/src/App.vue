@@ -1,19 +1,23 @@
 <template>
   <div id="app">
     <h1>Reading List</h1>
+    <!-- step one -->
     <reading-list />
     <new-book-form />
   </div>
 </template>
 
 <script>
-import NewBookForm from './components/NewBookForm.vue';
+//step one
 import ReadingList from './components/ReadingList.vue';
+import NewBookForm from './components/NewBookForm.vue';
+
 
 
 export default {
   name: 'app',
   components: {
+    // step one
     ReadingList,
     NewBookForm
   }
