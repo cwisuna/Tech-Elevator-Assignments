@@ -11,7 +11,9 @@ import BookCard from './BookCard.vue'
 
 export default {
   //step one
-  components: { BookCard },
+  components: {
+     BookCard 
+    },
     name: 'reading-list',
 }
 </script>

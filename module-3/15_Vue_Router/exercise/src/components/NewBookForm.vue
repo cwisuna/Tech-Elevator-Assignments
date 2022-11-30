@@ -29,6 +29,8 @@ export default {
                 read: false,
                 isbn: ''
             };
+            //step five
+            this.$router.push({name: 'mybooks'});
         }
     }
 }
