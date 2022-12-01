@@ -28,7 +28,7 @@ export default {
   },
   created(){
     TopicsWebServices.getDetails(this.$route.params.id).then(response => {
-      this.topics = response.data;
+      this.topic = response.data;
     })
   }
 }
