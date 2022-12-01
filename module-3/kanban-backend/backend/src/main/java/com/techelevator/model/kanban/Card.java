@@ -2,6 +2,7 @@ package com.techelevator.model.kanban;
 
 import javax.validation.constraints.NotBlank;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Card {
@@ -17,6 +18,9 @@ public class Card {
     private String tag;
     private List<Comment> comments;
 
+    public Card(){
+        this.comments = new ArrayList<Comment>();
+    }
     public Long getId() {
         return id;
     }

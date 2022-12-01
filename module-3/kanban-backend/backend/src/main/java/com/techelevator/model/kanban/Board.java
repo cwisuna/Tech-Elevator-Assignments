@@ -1,5 +1,6 @@
 package com.techelevator.model.kanban;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Board {
@@ -9,6 +10,9 @@ public class Board {
     private String backgroundColor;
     private List<Card> cards;
 
+    public Board(){
+        this.cards = new ArrayList<Card>();
+    }
     public Long getId() {
         return id;
     }
@@ -34,7 +38,9 @@ public class Board {
     }
 
     public List<Card> getCards() {
-        return cards;
+        return this.cards;
+//        return this.cards == null ? new ArrayList<Card>() : this.cards;
+
     }
 
     public void setCards(List<Card> cards) {
