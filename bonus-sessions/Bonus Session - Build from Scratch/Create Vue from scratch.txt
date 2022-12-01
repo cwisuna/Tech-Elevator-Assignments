@@ -1,0 +1,13 @@
+Vue create [proj name]
+	
+		1. Vue2 preset is fine just hit enter at the first prompt
+		2. Close and open the folder in VS Code
+		
+	Vue Router:
+		vue add router
+		Use History Mode for Router
+	Vuex:
+		vue add vuex
+
+	Axios: 
+  		npm install axios
