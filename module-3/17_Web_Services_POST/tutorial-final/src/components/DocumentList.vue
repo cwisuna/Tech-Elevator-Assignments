@@ -39,9 +39,7 @@ export default {
       this.$router.push(`/document/${id}`);
     },
     deleteDocument(id) {
-      docsService
-        .delete(id)
-        .then(response => {
+      docsService.delete(id).then(response => {
           if (response.status === 200) {
             this.getDocuments();
           }
